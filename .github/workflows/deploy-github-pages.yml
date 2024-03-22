@@ -39,6 +39,7 @@ jobs:
       - run: npm run static-build
         env:
           CI: false
+      - run: mv out build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
