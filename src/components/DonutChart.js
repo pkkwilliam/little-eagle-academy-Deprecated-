@@ -1,5 +1,4 @@
 import React from "react";
-import ReactApexChart from "react-apexcharts";
 
 const DonutChart = ({ value, background, color }) => {
   let series = [value],
@@ -49,12 +48,13 @@ const DonutChart = ({ value, background, color }) => {
     };
   return (
     <div id="chart">
-      <ReactApexChart
+      {/* <ReactApexChart
         options={options}
         series={series}
         type="radialBar"
         height={200}
-      />
+      /> */}
+      <p>THIS APEX CHART IS NOT WORKING!!!</p>
     </div>
   );
 };

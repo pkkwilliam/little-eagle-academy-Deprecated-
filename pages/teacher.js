@@ -1,13 +1,10 @@
 // import DonutChart from "../src/components/DonutChart";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import PageBanner from "../src/components/PageBanner";
 import TfCounter from "../src/components/TfCounter";
 import { LeftArrow, RightArrow } from "../src/Icons";
 import Layout from "../src/layouts/Layout";
-const DonutChart = dynamic(() => import("../src/components/DonutChart"), {
-  ssr: false,
-});
+import DonutChart from "../src/components/DonutChart";
 
 const Teacher = () => {
   return (
