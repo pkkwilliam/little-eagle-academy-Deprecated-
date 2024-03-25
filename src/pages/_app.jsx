@@ -4,11 +4,6 @@ if (typeof window !== "undefined") {
 import { store } from "../redux/store";
 import { Provider } from "react-redux";
 import "../styles/index.scss";
-import "../public/assets/css/animate.css"
-import "../public/assets/css/flaticon_kindedo.css";
-import "../public/assets/css/font-awesome-pro.css";
-import "../public/assets/css/spacing.css";
-
 import { PersistGate } from "redux-persist/integration/react";
 import { ToastContainer } from "react-toastify";
 import AppProvider from "../context/AppContext";
