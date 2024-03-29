@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Menus from "./menus";
-import logo from "@assets/img/logo/logo.svg";
+import logo from "@assets/img/logo/logo.png";
 import useSticky from "@hooks/use-sticky";
 import TopbarOne from "./component/topbar/topbarOne";
 import SearchPopup from "./component/search-popup";
@@ -33,8 +33,9 @@ const Header = () => {
                       <Image
                         src={logo}
                         style={{
-                          width: "100%",
-                          height: "100%",
+                          width: "38%",
+                          height: "38%",
+                          margin: 12,
                         }}
                         alt="img not found"
                       />
