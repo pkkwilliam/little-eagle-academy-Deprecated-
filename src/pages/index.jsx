@@ -12,23 +12,22 @@ import HomeTestimonial from "@components/testimonials/home-testimonial";
 import HomeTeacher from "@components/teachers/home-teacher";
 import HomeProgram from "@components/programs/home-program";
 
-
 export default function Home() {
   return (
     <Wrapper>
-      <SEO pageTitle={'Home Main'} />
+      <SEO pageTitle={"Home Main"} />
       <Header />
-      <HomeHero/>
-      <HomeClass/>
-      <HomePromotion/>
-      <HomeProgram/>
-      <HomeAbout/>
-      <HomeBanner/>
-      <HomeTeacher/>
-      <HomeTestimonial/>
-      <HomeBlog/>
-      <HomeNewsletter/>
-      <Footer/>
+      <HomeHero />
+      <HomeClass />
+      <HomePromotion />
+      {/* <HomeProgram/> */}
+      <HomeAbout />
+      <HomeBanner />
+      <HomeTeacher />
+      {/* <HomeTestimonial/> */}
+      {/* <HomeBlog /> */}
+      <HomeNewsletter />
+      <Footer />
     </Wrapper>
-  )
+  );
 }

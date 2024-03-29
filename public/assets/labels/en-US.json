@@ -1,0 +1,60 @@
+{
+  "code": "en-US",
+  "phoneNumber": "236-234-8383",
+  "home": {
+    "hero": {
+      "label1": "Kindergarten Program",
+      "label2": "Best Children’s Education",
+      "admissionButton": "Admission open 22-23"
+    },
+    "class": {
+      "title": "Our Class",
+      "description": "Our multi-level kindergarten programs cater to the age group of 2-5 years<br/> with a curriculum focussing children."
+    },
+    "promotion": {
+      "title": "Best for Your Kids",
+      "description": "Being brave isn’t always a grand gesture sometimes it just means having a go attempting that difficult question, offering an answer in a lesson when you’re simply really trying new.",
+      "bulletPoints": [
+        "We believe every child is intelligent so we care.",
+        "Teachers make a difference of your child."
+      ],
+      "applyNowButton": "Apply Now",
+      "promotionVideoButton": "Promotional Video"
+    },
+    "program": {
+      "title": "Our Programs",
+      "description": "Kindedo opened its doors in 1990 with a unique vision to provide its students<br /> with a globally focused study of arts."
+    },
+    "about": {
+      "title": "Know More<br />About Kindedo",
+      "accordion": [
+        {
+          "title": "What is the best age to start Kindergarten?",
+          "description": "Some states and countries implement mandatory early childhood education. With such rules, many preschool and kindergarten learning centers are built."
+        },
+        {
+          "title": "Which is the best preschool for your child?",
+          "description": "Right after you book your party, you’ll receive an email confirming the date, time, and details about what’s included in the package you’ve selected result."
+        },
+        {
+          "title": "What is the toution fee on first year?",
+          "description": "There will also be some fantastic outdoor entertainment, desserts and drinks, plus tours of the School for those who want to continue the celebrations."
+        }
+      ]
+    },
+    "banner": {
+      "title": "Join Our New Session",
+      "description": "Kindedo believes that good questions drive good answers.Whether it's a query<br /> about the world around us or a challenge.",
+      "applyNowButton": "Apply Now"
+    },
+    "teacher": {
+      "title": "Our Best Teachers",
+      "description": "With the help of teachers and the environment as the third teacher, students<br /> have opportunities to confidently take risks."
+    },
+    "newsLetter": {
+      "title": "Join Our Newsletter",
+      "description": "Subscribe our newsletter to get our latest update & news.",
+      "subscribeNowButton": "Subscribe now"
+    }
+  }
+}

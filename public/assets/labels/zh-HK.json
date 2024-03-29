@@ -1,0 +1,60 @@
+{
+  "code": "zh-HK",
+  "phoneNumber": "236-234-8383",
+  "home": {
+    "hero": {
+      "label1": "幼稚園課程",
+      "label2": "最佳兒童教育",
+      "admissionButton": "2022-2023年度招生"
+    },
+    "class": {
+      "title": "我們的班級",
+      "description": "我們的多層次幼稚園課程適用於2-5歲的孩子，課程側重於兒童。"
+    },
+    "promotion": {
+      "title": "最適合您的孩子",
+      "description": "勇敢並不總是一種偉大的姿態，有時只是嘗試解決那些困難的問題，在課堂上提出答案，而您只是嘗試新事物。",
+      "bulletPoints": [
+        "我們相信每個孩子都很聰明，所以我們關心。",
+        "老師們對您的孩子產生影響。"
+      ],
+      "applyNowButton": "立即申請",
+      "promotionVideoButton": "促銷視頻"
+    },
+    "program": {
+      "title": "我們的課程",
+      "description": "Kindedo於1990年開設，以獨特的願景為其學生提供全球化的藝術學習。"
+    },
+    "about": {
+      "title": "更多了解<br />關於 Kindedo",
+      "accordion": [
+        {
+          "title": "什麼是開始幼稚園的最佳年齡？",
+          "description": "一些州和國家實施義務的幼兒教育。在這種規定下，建立了許多學前和幼稚園學習中心。"
+        },
+        {
+          "title": "哪家幼稚園是最好的？",
+          "description": "一旦您預訂了聚會，您將收到一封確認日期、時間和有關您所選擇的套餐包含的詳細信息的電子郵件。"
+        },
+        {
+          "title": "第一年的學費是多少？",
+          "description": "還將有一些精彩的戶外娛樂活動、甜點和飲料，以及學校的參觀，供希望繼續慶祝的人參觀。"
+        }
+      ]
+    },
+    "banner": {
+      "title": "加入我們的新學期",
+      "description": "Kindedo相信好問題帶來好答案。無論是關於我們周圍世界的問題還是挑戰。",
+      "applyNowButton": "立即申請"
+    },
+    "teacher": {
+      "title": "我們的優秀教師",
+      "description": "在老師和環境的幫助下，作為第三位老師，學生們有機會充滿信心地冒險。"
+    },
+    "newsLetter": {
+      "title": "加入我們的電子報",
+      "description": "訂閱我們的電子報，獲取我們的最新更新和新聞。",
+      "subscribeNowButton": "立即訂閱"
+    }
+  }
+}

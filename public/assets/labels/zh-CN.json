@@ -1,0 +1,60 @@
+{
+  "code": "zh-CN",
+  "phoneNumber": "236-234-8383",
+  "home": {
+    "hero": {
+      "label1": "幼儿园课程",
+      "label2": "最佳儿童教育",
+      "admissionButton": "2022-2023年度招生"
+    },
+    "class": {
+      "title": "我们的班级",
+      "description": "我们的多层次幼儿园课程适用于2-5岁的孩子，课程侧重于儿童。"
+    },
+    "promotion": {
+      "title": "最适合您的孩子",
+      "description": "勇敢并不总是一种伟大的姿态，有时只是尝试着解决那些困难的问题，在课堂上提出答案，而您只是尝试新事物。",
+      "bulletPoints": [
+        "我们相信每个孩子都很聪明，所以我们关心。",
+        "老师们对您的孩子产生影响。"
+      ],
+      "applyNowButton": "立即申请",
+      "promotionVideoButton": "促销视频"
+    },
+    "program": {
+      "title": "我们的课程",
+      "description": "Kindedo于1990年开设，以独特的愿景为其学生提供全球化的艺术学习。"
+    },
+    "about": {
+      "title": "更多了解<br />关于 Kindedo",
+      "accordion": [
+        {
+          "title": "什么是开始幼儿园的最佳年龄？",
+          "description": "一些州和国家实施义务的幼儿教育。在这种规定下，建立了许多学前和幼儿园学习中心。"
+        },
+        {
+          "title": "哪家幼儿园是最好的？",
+          "description": "一旦您预订了聚会，您将收到一封确认日期、时间和有关您所选择的套餐包含的详细信息的电子邮件。"
+        },
+        {
+          "title": "第一年的学费是多少？",
+          "description": "还将有一些精彩的户外娱乐活动、甜点和饮料，以及学校的参观，供希望继续庆祝的人参观。"
+        }
+      ]
+    },
+    "banner": {
+      "title": "加入我们的新学期",
+      "description": "Kindedo相信好问题带来好答案。无论是关于我们周围世界的问题还是挑战。",
+      "applyNowButton": "立即申请"
+    },
+    "teacher": {
+      "title": "我们的优秀教师",
+      "description": "在老师和环境的帮助下，作为第三位老师，学生们有机会充满信心地冒险。"
+    },
+    "newsLetter": {
+      "title": "加入我们的电子报",
+      "description": "订阅我们的电子报，获取我们的最新更新和新闻。",
+      "subscribeNowButton": "立即订阅"
+    }
+  }
+}
