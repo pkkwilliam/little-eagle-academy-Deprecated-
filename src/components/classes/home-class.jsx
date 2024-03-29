@@ -64,7 +64,7 @@ const HomeClass = () => {
                     },
                   }}
                 >
-                  {class_data.slice(0, 4).map((item, index) => {
+                  {class_data.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
                         <div className="bd-class-wrapper text-center">
