@@ -109,8 +109,8 @@ const HomePromotion = ({ promoImg, promo_space }) => {
                 )}
                 <div className="bd-promotion-list mb-50">
                   <ul>
-                    {(labels?.bulletPoints ?? []).map((bulletPoint) => (
-                      <li>{bulletPoint}</li>
+                    {(labels?.bulletPoints ?? []).map((bulletPoint, i) => (
+                      <li key={`bulletPoint-${i}`}>{bulletPoint}</li>
                     ))}
                   </ul>
                 </div>

@@ -8,7 +8,7 @@ const LanguageDropdownSelector = () => {
   const LanguageOptions = LANGUAGES.sort((l1, l2) => l2.weight - l1.weight).map(
     (language) => {
       return (
-        <li>
+        <li key={language.code}>
           <a
             class="dropdown-item"
             onClick={() => dispatch(selectLanguage(language.code))}
