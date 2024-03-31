@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import loaderImg from "@assets/img/bg/logo.png";
+import loaderImg from "@assets/img/logo/logo.png";
 
 const Preloader = () => {
   return (
