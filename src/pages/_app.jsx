@@ -14,14 +14,18 @@ import Preloader from "@components/common/preloader";
 import { useEffect } from "react";
 
 let persistor = persistStore(store);
+const isDev = process.env.NODE_ENV === "development";
 
 function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true); // Add this state
 
   useEffect(() => {
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // Set the desired delay in milliseconds
+    const loadingTimeout = setTimeout(
+      () => {
+        setIsLoading(false);
+      },
+      isDev ? 0 : 3000
+    ); // Set the desired delay in milliseconds
 
     return () => clearTimeout(loadingTimeout);
   }, []);

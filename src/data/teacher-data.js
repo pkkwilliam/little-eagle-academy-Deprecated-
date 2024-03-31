@@ -11,10 +11,10 @@ import img_8 from "@assets/img/teacher/8.jpg";
 const teacher_data = [
   {
     id: 1,
-    img: img_1,
-    name: "Regina Jiang",
+    img: img_2,
+    name: "William Pun",
     designation: "Founder/Teacher",
-    delay: ".4s",
+    delay: ".5s",
     social_links: [
       {
         link: "http://facebook.com",
@@ -37,11 +37,11 @@ const teacher_data = [
     ],
   },
   {
-    id: 2,
-    img: img_2,
-    name: "William Pun",
+    id: 1,
+    img: img_1,
+    name: "Regina Jiang",
     designation: "Teacher",
-    delay: ".5s",
+    delay: ".4s",
     social_links: [
       {
         link: "http://facebook.com",

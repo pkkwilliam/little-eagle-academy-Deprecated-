@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { selectLanguage } from "src/redux/features/language-slice";
 import LANGUAGES from "src/enum/languages";
+import globe from "@assets/img/language/globe.png";
+import Image from "next/image";
 
 const LanguageDropdownSelector = () => {
   const dispatch = useDispatch();
@@ -21,14 +23,18 @@ const LanguageDropdownSelector = () => {
   );
   return (
     <>
-      <div class="dropdown">
+      <div class="dropdown d-flex justify-content-end align-items-center">
         <button
-          class="fas fa-globe"
           type="button"
           id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-        />
+        >
+          <Image
+            src={globe}
+            style={{ height: "32px", width: "32px", margin: 8 }}
+          />
+        </button>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           {LanguageOptions}

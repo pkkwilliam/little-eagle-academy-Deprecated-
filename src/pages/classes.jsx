@@ -8,18 +8,17 @@ import ClassPageMain from "@components/classes/class-page-main";
 import AboutTestimonial from "@components/testimonials/about-testimonial";
 import HeaderFour from "@layout/headers/headerFour";
 
-
 export default function Classes() {
   return (
     <Wrapper>
-      <SEO pageTitle={'Classes'} />
+      <SEO pageTitle={"Classes"} />
       <HeaderFour />
       <Breadcrumb title="Classes" subTitle="Classes" />
       <ClassPageMain />
-      <AboutTestimonial />
+      {/* <AboutTestimonial /> */}
       <ProgramPromotion />
       <HomeNewsletter />
-      <Footer/>
+      <Footer />
     </Wrapper>
-  )
+  );
 }

@@ -35,7 +35,7 @@ const Header = () => {
                         style={{
                           width: "38%",
                           height: "38%",
-                          margin: 12,
+                          margin: 6,
                         }}
                         alt="img not found"
                       />
@@ -45,7 +45,7 @@ const Header = () => {
                     <nav id="mobile-menu">
                       <Menus />
                     </nav>
-                    <div className="bd-search-btn-wrapper">
+                    {/* <div className="bd-search-btn-wrapper">
                       <button
                         className="bd-search-open-btn"
                         type="button"
@@ -53,7 +53,7 @@ const Header = () => {
                       >
                         <i className="flaticon-search"></i>
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="bd-header-bottom-right d-flex justify-content-end align-items-center">
                     <div className="bd-header-meta-item d-none bd-header-menu-meta d-xxl-flex align-items-center">
@@ -76,9 +76,7 @@ const Header = () => {
                         </span>
                       </Link> */}
                     </div>
-                    <div className="header-hamburger">
-                      <LanguageDropdownSelector />
-                    </div>
+                    <LanguageDropdownSelector />
                     <div className="header-hamburger">
                       <button
                         type="button"

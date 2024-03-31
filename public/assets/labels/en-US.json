@@ -1,6 +1,15 @@
 {
   "code": "en-US",
   "phoneNumber": "236-234-8383",
+  "component": {
+    "programPromotion": {
+      "title": "Health and Safety",
+      "label1": "Some states and countries implement mandatory early childhood education such rules, many preschool.",
+      "label2": "Being brave isn’t always a grand gesture sometimes it just means having a go attempting that difficult question, offering an answer in a lesson when you’re simply really trying new.",
+      "key1": "Nightly cleaning",
+      "key2": "Hand Washing"
+    }
+  },
   "home": {
     "hero": {
       "label1": "Kindergarten Program",
