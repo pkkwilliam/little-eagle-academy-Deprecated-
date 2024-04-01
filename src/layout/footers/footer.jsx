@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 const Footer = () => {
   const { languageLabel } = useSelector((state) => state.language);
   const labels = languageLabel?.component?.footer ?? {
+    contactInfo: {},
     program_links: { programs: [] },
     quick_links: { menus: [] },
     social_icons: [],
