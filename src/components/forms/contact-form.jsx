@@ -3,8 +3,12 @@ import { useFormik } from "formik";
 // internal
 import { contact_schema } from "@utils/validation-schema";
 import ErrorMsg from "./error-msg";
+import { useSelector } from "react-redux";
 
 const ContactForm = () => {
+  const { languageLabel } = useSelector((state) => state.language);
+  const labels = languageLabel?.component?.contactForm ?? {};
+
   // use formik
   const { handleChange, handleSubmit, handleBlur, errors, values, touched } =
     useFormik({
@@ -24,7 +28,7 @@ const ContactForm = () => {
   return (
     <form id="contact-form" onSubmit={handleSubmit}>
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-12">
           <div className="bd-contact-input mb-30">
             <input
               name="name"
@@ -32,13 +36,13 @@ const ContactForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               type="text"
-              placeholder="Enter your name"
+              placeholder={labels.enterYourNamePlaceHolder}
               id="name"
             />
             {touched.name && <ErrorMsg error={errors.name} />}
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <div className="bd-contact-input mb-30">
             <input
               name="email"
@@ -46,13 +50,13 @@ const ContactForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               type="email"
-              placeholder="Enter your email"
+              placeholder={labels.EnterYourEmailPlaceHolder}
               id="email"
             />
             {touched.email && <ErrorMsg error={errors.email} />}
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <div className="bd-contact-input mb-30">
             <input
               name="phone"
@@ -60,13 +64,13 @@ const ContactForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               type="text"
-              placeholder="Mobile no"
+              placeholder={labels.mobileNumberPlaceHolder}
               id="phone"
             />
             {touched.phone && <ErrorMsg error={errors.phone} />}
           </div>
         </div>
-        <div className="col-md-6">
+        {/* <div className="col-md-6">
           <div className="bd-contact-input custom-select-icon mb-30">
             <select name="subject" id="subject" className="bd-nice-select">
               <option>Select Subject</option>
@@ -75,7 +79,7 @@ const ContactForm = () => {
             </select>
             <i className="far fa-chevron-down"></i>
           </div>
-        </div>
+        </div> */}
         <div className="col-md-12">
           <div className="bd-contact-input mb-20">
             <textarea
@@ -84,23 +88,25 @@ const ContactForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               id="msg"
-              placeholder="Your message"
+              placeholder={labels.yourMessagePlaceHolder}
             ></textarea>
             {touched.msg && <ErrorMsg error={errors.msg} />}
           </div>
         </div>
-        <div className="col-md-12">
+        {/* <div className="col-md-12">
           <div className="bd-contact-agree d-flex align-items-center mb-20">
             <input className="" type="checkbox" id="check-agree" />
-            <label className="check-label" htmlFor="check-agree">Save Data for Next Comment</label>
+            <label className="check-label" htmlFor="check-agree">
+              Save Data for Next Comment
+            </label>
           </div>
-        </div>
+        </div> */}
         <div className="col-md-5">
           <div className="bd-contact-agree-btn">
             <button type="submit" className="bd-btn">
               <span className="bd-btn-inner">
-                <span className="bd-btn-normal">Send now</span>
-                <span className="bd-btn-hover">Send now</span>
+                <span className="bd-btn-normal">{labels.sendNowButton}</span>
+                <span className="bd-btn-hover">{labels.sendNowButton}</span>
               </span>
             </button>
           </div>

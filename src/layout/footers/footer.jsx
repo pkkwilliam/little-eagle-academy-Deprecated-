@@ -2,11 +2,17 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CopyrightText from "./component/copyright-text";
-import footer_data from "@data/footer-data";
+import logo from "@assets/img/logo/logo.png";
+import { useSelector } from "react-redux";
 // internal
 
-
 const Footer = () => {
+  const { languageLabel } = useSelector((state) => state.language);
+  const labels = languageLabel?.component?.footer ?? {
+    program_links: { programs: [] },
+    quick_links: { menus: [] },
+    social_icons: [],
+  };
   return (
     <>
       <footer>
@@ -19,19 +25,23 @@ const Footer = () => {
                   <div className="bd-footer-widget bd-footer-widget-1 mb-50">
                     <div className="bd-footer-logo mb-35">
                       <Link href="/">
-                        <Image style={{ width: "auto", height: "auto" }} src={footer_data.description.logo} alt="logo" />
+                        <Image
+                          style={{ width: "28%", height: "28%" }}
+                          src={logo}
+                          alt="logo"
+                        />
                       </Link>
                     </div>
                     <div className="bd-footer-widget-content mb-40">
-                      <p>{footer_data.description.teaser}</p>
+                      <p>{labels.teaser}</p>
                     </div>
                     <div className="bd-footer-bottom-social pb-20">
                       <ul>
-                        {footer_data.description.social_icons.map((item) => (
-                            <li key={item.id}>
-                              <a target="_blank" href={item.url} rel="noreferrer">
-                                <i className={item.icon}></i>
-                              </a>
+                        {labels.social_icons.map((item) => (
+                          <li key={item.id}>
+                            <a target="_blank" href={item.url} rel="noreferrer">
+                              <i className={item.icon}></i>
+                            </a>
                           </li>
                         ))}
                       </ul>
@@ -41,40 +51,59 @@ const Footer = () => {
                 <div className="col-lg-3 col-md-6 col-sm-6">
                   <div className="bd-footer-widget bd-footer-widget-2 mb-50">
                     <div className="bd-footer-widget-content">
-                      <h4 className="bd-footer-widget-title mb-30">{footer_data.quick_links.title}</h4>
+                      <h4 className="bd-footer-widget-title mb-30">
+                        {labels.quick_links.title}
+                      </h4>
                       <div className="bd-footer-list">
                         <ul>
-                          {footer_data.quick_links.menus.map((item) => (
-                            <li key={item.id}><Link href={item.path}>{item.menu}</Link></li>
+                          {labels.quick_links.menus.map((item) => (
+                            <li key={item.id}>
+                              <Link href={item.path}>{item.menu}</Link>
+                            </li>
                           ))}
                         </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-3 col-md-6 col-sm-6">
+                {/* <div className="col-lg-3 col-md-6 col-sm-6">
                   <div className="bd-footer-widget bd-footer-widget-3 mb-50">
                     <div className="bd-footer-widget-content">
-                      <h4 className="bd-footer-widget-title mb-30">{footer_data.program_links.title}</h4>
+                      <h4 className="bd-footer-widget-title mb-30">
+                        {labels.program_links.title}
+                      </h4>
                       <div className="bd-footer-list">
                         <ul>
-                            {footer_data.program_links.programs.map((item) => (
-                              <li key={item.id}><Link href={item.path}>{item.menu}</Link></li>
-                            ))}
+                          {labels.program_links.programs.map((item) => (
+                            <li key={item.id}>
+                              <Link href={item.path}>{item.menu}</Link>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="col-lg-3 col-md-6 col-sm-6">
                   <div className="bd-footer-widget bd-footer-widget-4">
                     <div className="bd-footer-widget-content">
-                      <h4 className="bd-footer-widget-title mb-30">{footer_data.contact_info.title}</h4>
+                      <h4 className="bd-footer-widget-title mb-30">
+                        {labels.contactInfo.title}
+                      </h4>
                       <div className="bd-footer-contact">
                         <ul>
-                          {footer_data.contact_info.infos.map((item) => (
-                            <li key={item.id}><i className={item.icon}></i><a href={item.url}>{item.title}</a></li>
-                          ))}
+                          <li key="contact_phone">
+                            <i className="fa-light fa-phone" />
+                            <a href={languageLabel.phoneNumberUrl}>
+                              {languageLabel.phoneNumber}
+                            </a>
+                          </li>
+                          <li key="contact_email">
+                            <i className="fa-light fa-envelope" />
+                            <a href={languageLabel.emailUrl}>
+                              {languageLabel.email}
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </div>

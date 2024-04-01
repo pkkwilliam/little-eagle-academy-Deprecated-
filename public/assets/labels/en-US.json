@@ -1,7 +1,73 @@
 {
   "code": "en-US",
+  "email": "pkkwilliam919@gmail.com",
+  "emailUrl": "mailto:pkkwilliam919@gmail.com",
   "phoneNumber": "236-234-8383",
+  "phoneNumberUrl": "tel:2362348383",
   "component": {
+    "contactForm": {
+      "enterYourNamePlaceHolder": "Enter your name",
+      "EnterYourEmailPlaceHolder": "Enter your email",
+      "mobileNumberPlaceHolder": "Mobile number",
+      "yourMessagePlaceHolder": "Your message",
+      "sendNowButton": "Send Now"
+    },
+    "contactFormMain": {
+      "title": "Contact Us Right Here"
+    },
+    "footer": {
+      "teaser": "In our Adult Participation programs, for most students, it is their first program in Kindedo.",
+      "socialTitle": "Social",
+      "newsTitle": "Join Our Newsletter",
+      "newsBtn": "Subscribe now",
+      "contactInfo": {
+        "title": "Contact Us"
+      },
+      "quick_links": {
+        "title": "Quick links",
+        "menus": [
+          {
+            "menu": "Classes",
+            "path": "/classes"
+          },
+          {
+            "menu": "News",
+            "path": "/news"
+          },
+          {
+            "menu": "About",
+            "path": "/about"
+          },
+          {
+            "menu": "Contact",
+            "path": "/contact"
+          }
+        ]
+      },
+      "social_icons": [
+        {
+          "icon": "fa-brands fa-facebook-f",
+          "url": "https://www.facebook.com/",
+          "name": "Facebook"
+        },
+        {
+          "icon": "fa-brands fa-twitter",
+          "url": "https://twitter.com/",
+          "name": "Twitter"
+        },
+        {
+          "icon": "fa-brands fa-youtube",
+          "url": "https://www.youtube.com/",
+          "name": "Youtube"
+        }
+      ]
+    },
+    "newsLetter": {
+      "title": "Join Our Newsletter",
+      "description": "Subscribe our newsletter to get our latest update & news.",
+      "subscribeNowButton": "Subscribe now",
+      "yourEmailPlaceHolder": "your email"
+    },
     "programPromotion": {
       "title": "Health and Safety",
       "label1": "Some states and countries implement mandatory early childhood education such rules, many preschool.",
@@ -59,11 +125,6 @@
     "teacher": {
       "title": "Our Best Teachers",
       "description": "With the help of teachers and the environment as the third teacher, students<br /> have opportunities to confidently take risks."
-    },
-    "newsLetter": {
-      "title": "Join Our Newsletter",
-      "description": "Subscribe our newsletter to get our latest update & news.",
-      "subscribeNowButton": "Subscribe now"
     }
   }
 }

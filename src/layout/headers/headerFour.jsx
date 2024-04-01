@@ -8,16 +8,19 @@ import SearchPopup from "./component/search-popup";
 import OffCanvasMain from "@components/common/off-canvas";
 import useSticky from "@hooks/use-sticky";
 import LanguageDropdownSelector from "@components/language/language-dropdown-selector";
+import { useSelector } from "react-redux";
 
 const HeaderFour = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { sticky } = useSticky();
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false);
+  const { languageLabel } = useSelector((state) => state.language);
+  const labels = languageLabel ?? {};
   return (
     <>
       <header>
         <div className="bd-header">
-          <TopbarFour />
+          {/* <TopbarFour /> */}
           <div
             id="header-sticky"
             className={`bd-header-bottom ${sticky ? "header-sticky" : ""}`}
@@ -54,7 +57,9 @@ const HeaderFour = () => {
                       </div>
                       <div className="bd-header-meta-text">
                         <p>
-                          <a href="tel:9072003462">907-200-3462</a>
+                          <a href={labels.phoneNumberUrl}>
+                            {labels.phoneNumber}
+                          </a>
                         </p>
                       </div>
                     </div>

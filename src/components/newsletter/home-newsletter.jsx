@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 const HomeNewsletter = () => {
   const { languageLabel } = useSelector((state) => state.language);
-  const labels = languageLabel?.home?.newsLetter ?? {};
+  const labels = languageLabel?.component?.newsLetter ?? {};
   // handleSubmit
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +27,10 @@ const HomeNewsletter = () => {
                 <div className="bd-newsletter-form">
                   <form onSubmit={handleSubmit}>
                     <div className="bd-newsletter-input">
-                      <input type="email" placeholder="your email" />
+                      <input
+                        type="email"
+                        placeholder={labels.yourEmailPlaceHolder}
+                      />
                       <button type="submit" className="bd-btn">
                         <span className="bd-btn-inner">
                           <span className="bd-btn-normal">

@@ -2,6 +2,18 @@ const isDev = process.env.NODE_ENV === "development";
 
 const menu_data = [
   {
+    id: 1,
+    hasDropdown: false,
+    title: "Home",
+    link: "/",
+  },
+  {
+    id: 2,
+    hasDropdown: false,
+    title: "About Us",
+    link: "/about",
+  },
+  {
     id: 3,
     title: "Classes",
     hasDropdown: false,
@@ -9,21 +21,9 @@ const menu_data = [
   },
   {
     id: 6,
-    hasDropdown: true,
-    title: "News",
-    link: "/news",
-    submenus: [
-      { title: "News Default", link: "/news" },
-      { title: "News Sidebar", link: "/news-sidebar" },
-      { title: "News Classic", link: "/news-classic" },
-      { title: "News Details", link: "/news-details" },
-    ],
-  },
-  {
-    id: 2,
     hasDropdown: false,
-    title: "About",
-    link: "/about",
+    title: "News & Events",
+    link: "/news",
   },
   {
     id: 7,

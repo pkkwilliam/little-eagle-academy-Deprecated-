@@ -1,7 +1,73 @@
 {
   "code": "zh-CN",
+  "email": "pkkwilliam919@gmail.com",
+  "emailUrl": "mailto:pkkwilliam919@gmail.com",
   "phoneNumber": "236-234-8383",
+  "phoneNumberUrl": "tel:2362348383",
   "component": {
+    "contactForm": {
+      "enterYourNamePlaceHolder": "输入您的姓名",
+      "EnterYourEmailPlaceHolder": "输入您的电子邮件",
+      "mobileNumberPlaceHolder": "手机号码",
+      "yourMessagePlaceHolder": "您的留言",
+      "sendNowButton": "立即发送"
+    },
+    "contactFormMain": {
+      "title": "就在这里联系我们"
+    },
+    "footer": {
+      "teaser": "在我们的成人参与计划中，对大多数学生而言，这是他们在Kindedo的第一个计划。",
+      "socialTitle": "社交",
+      "newsTitle": "订阅我们的通讯",
+      "newsBtn": "立即订阅",
+      "contactInfo": {
+        "title": "联系我们"
+      },
+      "quick_links": {
+        "title": "快速链接",
+        "menus": [
+          {
+            "menu": "课程",
+            "path": "/classes"
+          },
+          {
+            "menu": "新闻",
+            "path": "/news"
+          },
+          {
+            "menu": "关于",
+            "path": "/about"
+          },
+          {
+            "menu": "联系",
+            "path": "/contact"
+          }
+        ]
+      },
+      "social_icons": [
+        {
+          "icon": "fa-brands fa-facebook-f",
+          "url": "https://www.facebook.com/",
+          "name": "Facebook"
+        },
+        {
+          "icon": "fa-brands fa-twitter",
+          "url": "https://twitter.com/",
+          "name": "Twitter"
+        },
+        {
+          "icon": "fa-brands fa-youtube",
+          "url": "https://www.youtube.com/",
+          "name": "Youtube"
+        }
+      ]
+    },
+    "newsLetter": {
+      "title": "加入我们的电子报",
+      "description": "订阅我们的电子报，获取我们的最新更新和新闻。",
+      "subscribeNowButton": "立即订阅",
+      "yourEmailPlaceHolder": "您的电子邮件"
+    },
     "programPromotion": {
       "title": "健康与安全",
       "label1": "一些州和国家实施了强制性的幼儿教育规定，许多学前。",
@@ -59,11 +125,6 @@
     "teacher": {
       "title": "我们的优秀教师",
       "description": "在老师和环境的帮助下，作为第三位老师，学生们有机会充满信心地冒险。"
-    },
-    "newsLetter": {
-      "title": "加入我们的电子报",
-      "description": "订阅我们的电子报，获取我们的最新更新和新闻。",
-      "subscribeNowButton": "立即订阅"
     }
   }
 }

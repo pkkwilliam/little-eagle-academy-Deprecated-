@@ -19,8 +19,7 @@ const Header = () => {
     <>
       <header>
         <div className="bd-header">
-          <TopbarOne />
-
+          {/* <TopbarOne /> */}
           <div
             id="header-sticky"
             className={`bd-header-bottom ${sticky ? "header-sticky" : ""}`}
@@ -62,7 +61,7 @@ const Header = () => {
                       </div>
                       <div className="bd-header-meta-text">
                         <p>
-                          <a href={`tel:${languageLabel.phoneNumber}`}>
+                          <a href={languageLabel.phoneNumberUrl}>
                             {languageLabel.phoneNumber}
                           </a>
                         </p>
