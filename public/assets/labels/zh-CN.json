@@ -62,6 +62,13 @@
         }
       ]
     },
+    "menu": {
+      "home": "首页",
+      "aboutUs": "关于我们",
+      "classes": "课程",
+      "newsAndEvents": "新闻与活动",
+      "contact": "联系"
+    },
     "newsLetter": {
       "title": "加入我们的电子报",
       "description": "订阅我们的电子报，获取我们的最新更新和新闻。",
@@ -126,5 +133,12 @@
       "title": "我们的优秀教师",
       "description": "在老师和环境的帮助下，作为第三位老师，学生们有机会充满信心地冒险。"
     }
+  },
+  "page": {
+    "home": "首页",
+    "aboutUs": "关于我们",
+    "classes": "课程",
+    "newsAndEvents": "新闻与活动",
+    "contact": "联系"
   }
 }

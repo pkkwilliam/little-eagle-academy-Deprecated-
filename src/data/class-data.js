@@ -19,6 +19,7 @@ const class_data = [
     shape: shape1,
     clrClass: "clr-2",
     price: 45.0,
+    priceUnit: "Class",
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ const class_data = [
     btn: "View Details",
     shape: shape1,
     price: 45.0,
+    priceUnit: "Class",
   },
   {
     id: 3,
@@ -38,6 +40,7 @@ const class_data = [
     btn: "View Details",
     shape: shape1,
     price: 60.0,
+    priceUnit: "Class",
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ const class_data = [
     shape: shape1,
     clrClass: "clr-2",
     price: 90.0,
+    priceUnit: "Class",
   },
   // classes page data
   {
@@ -59,6 +63,7 @@ const class_data = [
     authorImg: author_1,
     authorName: "William Pun",
     price: 90.0,
+    priceUnit: "Class",
     btn: "Join Now",
     delay: ".3s",
   },
@@ -70,6 +75,7 @@ const class_data = [
     authorImg: author_1,
     authorName: "Steve Smith",
     price: 55.0,
+    priceUnit: "Class",
     btn: "Join Now",
     delay: ".4s",
   },

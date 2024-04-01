@@ -62,6 +62,13 @@
         }
       ]
     },
+    "menu": {
+      "home": "Home",
+      "aboutUs": "About Us",
+      "classes": "Classes",
+      "newsAndEvents": "News & Events",
+      "contact": "Contact"
+    },
     "newsLetter": {
       "title": "Join Our Newsletter",
       "description": "Subscribe our newsletter to get our latest update & news.",
@@ -126,5 +133,12 @@
       "title": "Our Best Teachers",
       "description": "With the help of teachers and the environment as the third teacher, students<br /> have opportunities to confidently take risks."
     }
+  },
+  "page": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "classes": "Classes",
+    "newsAndEvents": "News & Events",
+    "contact": "Contact"
   }
 }

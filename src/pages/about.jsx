@@ -11,22 +11,24 @@ import AboutTestimonial from "@components/testimonials/about-testimonial";
 import HomeTeacher from "@components/teachers/home-teacher";
 import AboutFact from "@components/facts/about-fact";
 import HeaderFour from "@layout/headers/headerFour";
-
+import { useSelector } from "react-redux";
 
 export default function About() {
+  const { languageLabel } = useSelector((state) => state.language);
+  const labels = languageLabel?.page ?? {};
   return (
     <Wrapper>
-      <SEO pageTitle={'About'} />
+      <SEO pageTitle={"About"} />
       <HeaderFour />
-      <Breadcrumb title="About" subTitle="About" />
+      <Breadcrumb title={labels.aboutUs} subTitle={labels.aboutUs} />
       <HomePromotion promo_space="pt-120 pb-60" promoImg={promoImgTwo} />
       <HomeThreeFeature wave={true} />
-      <AboutPromotion />
-      <AboutTestimonial />
+      {/* <AboutPromotion /> */}
+      {/* <AboutTestimonial /> */}
       <HomeTeacher />
       <AboutFact />
       <HomeNewsletter />
-      <Footer/>
+      <Footer />
     </Wrapper>
-  )
+  );
 }
