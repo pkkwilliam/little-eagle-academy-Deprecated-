@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import Link from "next/link";
 // internal
 import menu_data from "@data/menu-data";
+import { useSelector } from "react-redux";
 
 const MobileMenus = () => {
   const [subMenu, setSubMenu] = useState("");
   const [navTitle, setNavTitle] = useState("");
+
+  const { languageLabel } = useSelector((state) => state.language);
+  const labels = languageLabel?.component?.menu ?? {};
+
   //openMobileMenu
   const openMobileMenu = (menu) => {
     if (navTitle === menu) {
@@ -27,30 +32,32 @@ const MobileMenus = () => {
       <ul>
         {menu_data.map((menu, i) => (
           <React.Fragment key={i}>
-            {menu.hasDropdown && !menu?.megaMenu && !menu.pages && (
+            {!menu?.megaMenu && !menu.pages && (
               <li className="has-dropdown">
-                <Link href={menu.link}>{menu.title}</Link>
+                <Link href={menu.link}>{labels[menu.label]}</Link>
                 <ul
                   className="submenu"
                   style={{
                     display: navTitle === menu.title ? "block" : "none",
                   }}
                 >
-                  {menu.submenus.map((sub, i) => (
+                  {(menu?.submenus ?? []).map((sub, i) => (
                     <li key={i}>
                       <Link href={sub.link}>{sub.title}</Link>
                     </li>
                   ))}
                 </ul>
-                <a
-                  className={`mean-expand ${
-                    navTitle === menu.title ? "mean-clicked" : ""
-                  }`}
-                  onClick={() => openMobileMenu(menu.title)}
-                  style={{ fontSize: "18px",cursor:'pointer' }}
-                >
-                  <i className="fal fa-plus"></i>
-                </a>
+                {!menu.hasDropdown ? null : (
+                  <a
+                    className={`mean-expand ${
+                      navTitle === menu.title ? "mean-clicked" : ""
+                    }`}
+                    onClick={() => openMobileMenu(menu.title)}
+                    style={{ fontSize: "18px", cursor: "pointer" }}
+                  >
+                    <i className="fal fa-plus"></i>
+                  </a>
+                )}
               </li>
             )}
 
@@ -84,7 +91,7 @@ const MobileMenus = () => {
                           subMenu === mega_m.title ? "mean-clicked" : ""
                         }`}
                         onClick={() => openSubMobileMenu(mega_m.title)}
-                        style={{ fontSize: "18px",cursor:'pointer' }}
+                        style={{ fontSize: "18px", cursor: "pointer" }}
                       >
                         <i className="fal fa-plus"></i>
                       </a>
@@ -96,7 +103,7 @@ const MobileMenus = () => {
                     navTitle === menu.title ? "mean-clicked" : ""
                   }`}
                   onClick={() => openMobileMenu(menu.title)}
-                  style={{ fontSize: "18px",cursor:'pointer' }}
+                  style={{ fontSize: "18px", cursor: "pointer" }}
                 >
                   <i className="fal fa-plus"></i>
                 </a>
@@ -133,7 +140,7 @@ const MobileMenus = () => {
                           subMenu === mega_m.title ? "mean-clicked" : ""
                         }`}
                         onClick={() => openSubMobileMenu(mega_m.title)}
-                        style={{ fontSize: "18px",cursor:'pointer' }}
+                        style={{ fontSize: "18px", cursor: "pointer" }}
                       >
                         <i className="fal fa-plus"></i>
                       </a>
@@ -145,7 +152,7 @@ const MobileMenus = () => {
                     navTitle === menu.title ? "mean-clicked" : ""
                   }`}
                   onClick={() => openMobileMenu(menu.title)}
-                  style={{ fontSize: "18px",cursor:'pointer' }}
+                  style={{ fontSize: "18px", cursor: "pointer" }}
                 >
                   <i className="fal fa-plus"></i>
                 </a>

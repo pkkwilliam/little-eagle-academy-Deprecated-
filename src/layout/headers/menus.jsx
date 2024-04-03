@@ -1,3 +1,4 @@
+import menu_data from "@data/menu-data";
 import Link from "next/link";
 import React from "react";
 // internal
@@ -7,48 +8,16 @@ const Menus = () => {
   const { languageLabel } = useSelector((state) => state.language);
   const labels = languageLabel?.component?.menu ?? {};
   // Take a look of import menu_data from "@data/menu-data";
-  const menu = [
-    {
-      id: 1,
-      hasDropdown: false,
-      title: labels.home,
-      link: "/",
-    },
-    {
-      id: 2,
-      hasDropdown: false,
-      title: labels.aboutUs,
-      link: "/about",
-    },
-    {
-      id: 3,
-      hasDropdown: false,
-      title: labels.classes,
-      link: "/classes",
-    },
-    {
-      id: 6,
-      hasDropdown: false,
-      title: labels.newsAndEvents,
-      link: "/news",
-    },
-    {
-      id: 7,
-      hasDropdown: false,
-      title: labels.contact,
-      link: "/contact",
-    },
-  ];
   return (
     <ul>
-      {menu.map((menu, i) => (
+      {menu_data.map((menu, i) => (
         <li
           key={i}
           className={` ${menu.megaMenu ? "has-dropdown has-mega-menu" : ""} ${
             menu.megaMenuTwo ? "has-dropdown has-mega-menu" : ""
           } ${menu.hasDropdown ? "has-dropdown" : ""}`}
         >
-          <Link href={menu.link}>{menu.title}</Link>
+          <Link href={menu.link}>{labels[menu.label]}</Link>
           {menu.hasDropdown && (
             <ul className="submenu">
               {menu.submenus.map((sub, i) => (

@@ -3,7 +3,7 @@
   "email": "pkkwilliam919@gmail.com",
   "emailUrl": "mailto:pkkwilliam919@gmail.com",
   "phoneNumber": "236-234-8383",
-  "phoneNumberUrl": "tel:2362348383",
+  "phoneNumberUrl": "tel:+12362348383",
   "component": {
     "classCat": {
       "age": "Age",
@@ -73,6 +73,11 @@
           "name": "Youtube"
         }
       ]
+    },
+    "hamburgerMenu": {
+      "aboutOurSchoolTitle": "About Little Eagle Academy",
+      "aboutSummary": "With the help of teachers and environment as the third teacher, students have opportunities to confidently take risks.",
+      "contactInfo": "Contact Info"
     },
     "menu": {
       "home": "Home",

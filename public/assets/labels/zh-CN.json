@@ -3,7 +3,7 @@
   "email": "pkkwilliam919@gmail.com",
   "emailUrl": "mailto:pkkwilliam919@gmail.com",
   "phoneNumber": "236-234-8383",
-  "phoneNumberUrl": "tel:2362348383",
+  "phoneNumberUrl": "tel:+12362348383",
   "component": {
     "classCat": {
       "age": "年龄",
@@ -73,6 +73,11 @@
           "name": "Youtube"
         }
       ]
+    },
+    "hamburgerMenu": {
+      "aboutOurSchoolTitle": "关于小老鹰学院",
+      "aboutSummary": "在老师和环境的帮助下，作为第三位老师，学生有机会充满信心地冒险。",
+      "contactInfo": "联系信息"
     },
     "menu": {
       "home": "首页",
