@@ -45,7 +45,7 @@ const ClassPageMain = () => {
                     <div className="bd-class-meta">
                       <div className="bd-class-meta-price">
                         <span>${item.price}/</span>
-                        {item.priceUnit}
+                        {item.unit}
                       </div>
                     </div>
                   </div>

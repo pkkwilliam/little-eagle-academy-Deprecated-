@@ -5,6 +5,18 @@
   "phoneNumber": "236-234-8383",
   "phoneNumberUrl": "tel:2362348383",
   "component": {
+    "classCat": {
+      "age": "Age",
+      "classDuration": "Class Duration",
+      "classSize": "Class Size",
+      "duration": "Duration",
+      "minutes": "minutes"
+    },
+    "classDetailsArea": {
+      "classTeach": "Class Teacher",
+      "category": "Category",
+      "pricePerUnit": "Per"
+    },
     "contactForm": {
       "enterYourNamePlaceHolder": "Enter your name",
       "EnterYourEmailPlaceHolder": "Enter your email",
@@ -138,6 +150,7 @@
     "home": "Home",
     "aboutUs": "About Us",
     "classes": "Classes",
+    "classDetail": "Class Details",
     "newsAndEvents": "News & Events",
     "contact": "Contact"
   }

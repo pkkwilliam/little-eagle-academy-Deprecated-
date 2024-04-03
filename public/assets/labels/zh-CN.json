@@ -5,6 +5,18 @@
   "phoneNumber": "236-234-8383",
   "phoneNumberUrl": "tel:2362348383",
   "component": {
+    "classCat": {
+      "age": "年龄",
+      "classDuration": "课程时长",
+      "classSize": "班级大小",
+      "duration": "时长",
+      "minutes": "分钟"
+    },
+    "classDetailsArea": {
+      "classTeach": "班主任",
+      "category": "类别",
+      "pricePerUnit": "每"
+    },
     "contactForm": {
       "enterYourNamePlaceHolder": "输入您的姓名",
       "EnterYourEmailPlaceHolder": "输入您的电子邮件",
@@ -138,6 +150,7 @@
     "home": "首页",
     "aboutUs": "关于我们",
     "classes": "课程",
+    "classDetail": "课程详情",
     "newsAndEvents": "新闻与活动",
     "contact": "联系"
   }
