@@ -29,7 +29,7 @@ const ClassPageMain = () => {
       <div className="container">
         <div className="row">
           {classes.map((item) => {
-            const clazz = item.localized[selectedLanguage];
+            const clazz = item?.localized?.[selectedLanguage] ?? {};
             const instructor = item.instructor;
             const localizedInstructor =
               instructor?.localized?.[selectedLanguage];

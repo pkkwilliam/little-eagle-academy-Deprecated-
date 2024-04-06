@@ -81,7 +81,8 @@ const HomeClass = () => {
                 >
                   {classes.map((item, index) => {
                     const clazz = item;
-                    const localizedClazz = clazz.localized[selectedLanguage];
+                    const localizedClazz =
+                      clazz?.localized?.[selectedLanguage] ?? {};
                     return (
                       <SwiperSlide key={index}>
                         <div className="bd-class-wrapper text-center">
