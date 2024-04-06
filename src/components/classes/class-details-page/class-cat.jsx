@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const ClassCat = ({ item }) => {
   const { languageLabel } = useSelector((state) => state.language);
+  const enumLabels = languageLabel?.enum ?? {};
   const labels = languageLabel?.component?.classCat ?? {};
   return (
     <section className="bd-shop-cat-area pb-90">
@@ -21,8 +22,8 @@ const ClassCat = ({ item }) => {
                       <i className="flaticon-clock-2"></i>
                     </div>
                   </div>
-                  <h6>{item.cadence}</h6>
-                  <span>{labels.duration}</span>
+                  <h6>{labels.duration}</h6>
+                  <span>{enumLabels.cadence[item.cadence]}</span>
                 </div>
               </div>
             </div>
@@ -40,10 +41,10 @@ const ClassCat = ({ item }) => {
                       <i className="flaticon-sand-clock"></i>
                     </div>
                   </div>
-                  <h6>
+                  <h6>{labels.classDuration}</h6>
+                  <span>
                     {item.duration} {labels.minutes}
-                  </h6>
-                  <span>{labels.classDuration}</span>
+                  </span>
                 </div>
               </div>
             </div>

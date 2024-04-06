@@ -18,7 +18,8 @@ const ClassDetailsArea = ({ item }) => {
   const labels = languageLabel?.component?.classDetailsArea ?? {};
   const clazz = item;
   const clazzLocalization = item?.localized?.[selectedLanguage] ?? {};
-  const instructor = item?.instructor?.localized?.[selectedLanguage] ?? {};
+  const instructor = item?.instructor ?? {};
+  const localizedInstructor = instructor?.localized?.[selectedLanguage] ?? {};
   return (
     <>
       <Breadcrumb
@@ -69,7 +70,9 @@ const ClassDetailsArea = ({ item }) => {
                     <div className="bd-class-details-author-name">
                       <span>{labels.classTeach}</span>
                       <h5>
-                        <Link href="/teachers">{instructor.name}</Link>
+                        <Link href={`/teacher-details/${instructor.id}`}>
+                          {localizedInstructor.name}
+                        </Link>
                       </h5>
                     </div>
                   </div>

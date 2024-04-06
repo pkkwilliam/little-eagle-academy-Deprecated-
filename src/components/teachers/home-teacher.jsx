@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Scrollbar, A11y, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,10 +6,26 @@ import "swiper/css/bundle";
 import teacher_data from "@data/teacher-data";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import { getInstructors } from "src/middleware/apiDataService";
+import { store } from "src/redux/store";
+import img_1 from "@assets/img/teacher/1.jpg";
 
 const HomeTeacher = () => {
-  const { languageLabel } = useSelector((state) => state.language);
+  const [instructors, setInstructors] = useState([]);
+  const { languageLabel, selectedLanguage } = useSelector(
+    (state) => state.language
+  );
   const labels = languageLabel?.home?.teacher ?? {};
+
+  useEffect(() => {
+    fetchInstructors();
+  }, []);
+
+  const fetchInstructors = async () => {
+    const instructrosResult = await getInstructors(store);
+    setInstructors(instructrosResult);
+  };
+
   return (
     <section className="bd-teacher-area pt-120 pb-120">
       <div className="container">
@@ -67,14 +83,17 @@ const HomeTeacher = () => {
                     },
                   }}
                 >
-                  {teacher_data.map((item, index) => {
+                  {instructors.map((item, index) => {
+                    const instructor = item;
+                    const localizedInstructor =
+                      item?.localized?.[selectedLanguage] ?? {};
                     return (
                       <SwiperSlide key={index}>
                         <div className="bd-teacher">
-                          <Link href={`/teacher-details/${item.id}`}>
+                          <Link href={`/teacher-details/${instructor.id}`}>
                             <div className="bd-teacher-thumb">
                               <Image
-                                src={item.img}
+                                src={img_1}
                                 style={{ width: "100%", height: "100%" }}
                                 alt="img not found"
                               />
@@ -83,16 +102,18 @@ const HomeTeacher = () => {
                           <div className="bd-teacher-content-wrapper">
                             <div className="bd-teacher-content">
                               <h4 className="bd-teacher-title">
-                                <Link href={`/teacher-details/${item.id}`}>
-                                  {item.name}
+                                <Link
+                                  href={`/teacher-details/${instructor.id}`}
+                                >
+                                  {localizedInstructor.name}
                                 </Link>
                               </h4>
                               <span className="bd-teacher-des">
-                                {item.designation}
+                                {localizedInstructor.title}
                               </span>
                             </div>
                             <div className="bd-teacher-social">
-                              <ul>
+                              {/* <ul>
                                 {item.social_links.map((social, i) => (
                                   <li key={i}>
                                     <a
@@ -104,7 +125,8 @@ const HomeTeacher = () => {
                                     </a>
                                   </li>
                                 ))}
-                              </ul>
+                              </ul> */}
+                              View Detail
                             </div>
                           </div>
                         </div>
