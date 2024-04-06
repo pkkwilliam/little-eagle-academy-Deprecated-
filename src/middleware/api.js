@@ -12,5 +12,5 @@ export const GET_INSTRUCTORS = {
 };
 
 function getDomain() {
-  return process.env.NODE_ENV === "development" ? LOCAL_DOMAIN : PROD_DOMAIN;
+  return process.env.NODE_ENV === "development" ? PROD_DOMAIN : PROD_DOMAIN;
 }

@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { getClasses } from "src/middleware/apiDataService";
 import { store } from "src/redux/store";
+import img_1 from "@assets/img/class/6.jpg";
+import author_1 from "@assets/img/teacher/small-1.png";
 
 const ClassPageMain = () => {
   const { languageLabel, selectedLanguage } = useSelector(
@@ -39,7 +41,7 @@ const ClassPageMain = () => {
                 >
                   <div className="bd-class-thumb">
                     <Image
-                      src={item.img}
+                      src={img_1}
                       style={{ width: "100%", height: "100%" }}
                       alt="img not found"
                     />
@@ -56,7 +58,7 @@ const ClassPageMain = () => {
                         <div className="bd-class-meta-thumb">
                           <Link href={`/class-details/${item.id}`}>
                             <Image
-                              src={item.authorImg}
+                              src={author_1}
                               style={{ width: "100%", height: "100%" }}
                               alt="img not found"
                             />
@@ -77,7 +79,7 @@ const ClassPageMain = () => {
                     </div>
                   </div>
                   <div className="bd-class-btn-3 theme-bg-2 text-center">
-                    <Link href={`/class-details/${item.id}`}>{item.btn}</Link>
+                    <Link href={`/class-details/${item.id}`}>View Detail</Link>
                   </div>
                 </div>
               </div>
