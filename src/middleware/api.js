@@ -1,5 +1,5 @@
 const LOCAL_DOMAIN = "http://localhost:8081";
-const PROD_DOMAIN = "https://api.googlyland.com";
+const PROD_DOMAIN = "https://api.littleeagleacademy.com";
 
 export const GET_CLASSES = {
   requestUrl: getDomain() + "/public/reactive/clazz/v1",

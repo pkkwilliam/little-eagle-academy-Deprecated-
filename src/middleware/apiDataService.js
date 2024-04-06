@@ -3,7 +3,7 @@ import { GET_CLASSES, GET_INSTRUCTORS } from "./api";
 import execute from "./serviceExecutor";
 import { setInstructors } from "src/redux/features/instructor-slice";
 
-const useStatic = true;
+const useStatic = false;
 const useCache = false;
 
 export const getClasses = async (store) => {
