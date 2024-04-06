@@ -33,7 +33,6 @@ export default function ClassDetails() {
 
   //   return () => {};
   // }, [id]);
-  console.log(classes);
   const clazzDetail = classes.find((clazz) => clazz.id === selectedId) || {};
   if (!selectedId) {
     return <h1>Loading...</h1>;

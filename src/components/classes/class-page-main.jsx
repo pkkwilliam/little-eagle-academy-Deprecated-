@@ -31,7 +31,8 @@ const ClassPageMain = () => {
           {classes.map((item) => {
             const clazz = item.localized[selectedLanguage];
             const instructor = item.instructor;
-            const localizedInstructor = instructor.localized[selectedLanguage];
+            const localizedInstructor =
+              instructor?.localized?.[selectedLanguage];
             return (
               <div className="col-xl-4 col-lg-6 col-md-6" key={item.id}>
                 <div
