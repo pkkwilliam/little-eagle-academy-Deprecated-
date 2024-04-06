@@ -9,24 +9,40 @@ import HeaderFour from "@layout/headers/headerFour";
 import { Wrapper } from "@layout/index";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { getClasses } from "src/middleware/apiDataService";
+import { store } from "src/redux/store";
 
 export default function ClassDetails() {
+  const [selectedId, setSelecteId] = useState(undefined);
+  const [classes, setClasses] = useState([]);
   const router = useRouter();
   const id = router.query.id;
-  const [classes, setClasses] = useState({});
 
+  const fetchClasses = async () => {
+    const classes = await getClasses(store);
+    setClasses(classes);
+  };
   useEffect(() => {
-    if (!id) <h1>Loading...</h1>;
-    else setClasses(class_data.find((item) => item.id == id));
-
-    return () => {};
+    setSelecteId(id);
+    fetchClasses();
   }, [id]);
 
+  // useEffect(() => {
+  //   if (!id) <h1>Loading...</h1>;
+  //   else setClasses(class_data.find((item) => item.id == id));
+
+  //   return () => {};
+  // }, [id]);
+  console.log(classes);
+  const clazzDetail = classes.find((clazz) => clazz.id === selectedId) || {};
+  if (!selectedId) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <Wrapper>
       <SEO pageTitle={"Class Details"} />
       <HeaderFour />
-      <ClassDetailsArea item={classes} />
+      <ClassDetailsArea item={clazzDetail} />
       {/* <HomeBanner /> */}
       {/* <MoreProgrammers/> */}
       <HomeNewsletter />

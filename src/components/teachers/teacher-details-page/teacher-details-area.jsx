@@ -3,8 +3,12 @@ import TeacherSkills from "./teacher-skills";
 import TeacherInfo from "./teacher-info";
 import Breadcrumb from "@components/common/breadcrumb/breadcrumb";
 import Image from "next/image";
+import img_2 from "@assets/img/teacher/2.jpg";
+import { useSelector } from "react-redux";
 
 const TeacherDetailsArea = ({ item }) => {
+  const { selectedLanguage } = useSelector((state) => state.language);
+  const localizedInstructor = item?.localized?.[selectedLanguage] ?? {};
   return (
     <>
       <Breadcrumb title="Teacher Details" subTitle="Teacher Details" />
@@ -18,13 +22,13 @@ const TeacherDetailsArea = ({ item }) => {
                 data-wow-delay=".3s"
               >
                 <div className="bd-teacher-widget-thumb p-relative">
-                  {item.img && (
+                  {
                     <Image
-                      src={item.img}
+                      src={img_2}
                       style={{ width: "100%", height: "100%" }}
                       alt="img not found"
                     />
-                  )}
+                  }
                   <div className="panel wow"></div>
                 </div>
               </div>
@@ -36,22 +40,18 @@ const TeacherDetailsArea = ({ item }) => {
                 data-wow-delay=".3s"
               >
                 <div className="bd-teacher-widget-content">
-                  <h3 className="bd-teacher-widget-title">{item.name}</h3>
+                  <h3 className="bd-teacher-widget-title">
+                    {localizedInstructor.name}
+                  </h3>
                   <span className="bd-teacher-widget-tag">
-                    {item.designation}
+                    {localizedInstructor.title}
                   </span>
-                  <p>
-                    The foundation safasdfasdfasdfof the Montessori philosophy
-                    is based upon the idea that children should work at their
-                    own pacedfdfd, according to their own strengths in
-                    surroundings that help to develop their intelligence, keed
-                    the good work, will help kindedo.
-                  </p>
-                  <p>
-                    Observers of Montessori children note that they are
-                    confident, caringperceptasdfasdfasdfive, independent.
-                  </p>
-                  {item.social_links && (
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: localizedInstructor.description,
+                    }}
+                  />
+                  {/* {item.social_links && (
                     <div className="bd-teacher-widget-social">
                       <span>Follow Me:</span>
                       <ul>
@@ -68,7 +68,7 @@ const TeacherDetailsArea = ({ item }) => {
                         ))}
                       </ul>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>

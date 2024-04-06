@@ -21,7 +21,7 @@ const ClassCat = ({ item }) => {
                       <i className="flaticon-clock-2"></i>
                     </div>
                   </div>
-                  <h6>{item.frequency}</h6>
+                  <h6>{item.cadence}</h6>
                   <span>{labels.duration}</span>
                 </div>
               </div>
@@ -62,7 +62,7 @@ const ClassCat = ({ item }) => {
                     </div>
                   </div>
                   <h6>{labels.classSize}</h6>
-                  <span dangerouslySetInnerHTML={{ __html: item.size }} />
+                  <span dangerouslySetInnerHTML={{ __html: item.classSize }} />
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ const ClassCat = ({ item }) => {
                     </div>
                   </div>
                   <h6>{labels.age}</h6>
-                  <span>{item.ageRange}</span>
+                  <span>{`${item.minAge} - ${item.maxAge}`}</span>
                 </div>
               </div>
             </div>

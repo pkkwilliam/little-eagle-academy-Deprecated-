@@ -1,15 +1,15 @@
 export const LANGUAGE_ENGLISH_US = {
-  code: "en-US",
+  code: "en_US",
   label: "English",
   weight: 0,
 };
 export const LANGUAGE_CHINESE_TRADITIONAL = {
-  code: "zh-HK",
+  code: "zh_HK",
   label: "䌓體中文",
   weight: 1,
 };
 export const LANGUAGE_CHINESE_SIMPLIFIED = {
-  code: "zh-CN",
+  code: "zh_CN",
   label: "简体中文",
   weight: 2,
 };

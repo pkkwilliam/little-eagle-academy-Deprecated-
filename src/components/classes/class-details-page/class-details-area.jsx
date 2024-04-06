@@ -11,8 +11,14 @@ import Breadcrumb from "@components/common/breadcrumb/breadcrumb";
 import { useSelector } from "react-redux";
 
 const ClassDetailsArea = ({ item }) => {
-  const { languageLabel } = useSelector((state) => state.language);
+  const { languageLabel, selectedLanguage } = useSelector(
+    (state) => state.language
+  );
+  const enumLabels = languageLabel?.enum ?? {};
   const labels = languageLabel?.component?.classDetailsArea ?? {};
+  const clazz = item;
+  const clazzLocalization = item?.localized?.[selectedLanguage] ?? {};
+  const instructor = item?.instructor?.localized?.[selectedLanguage] ?? {};
   return (
     <>
       <Breadcrumb
@@ -47,7 +53,9 @@ const ClassDetailsArea = ({ item }) => {
                 </h3>
                 <p
                   className="mb-25"
-                  dangerouslySetInnerHTML={{ __html: item.introduction }}
+                  dangerouslySetInnerHTML={{
+                    __html: clazzLocalization.description,
+                  }}
                 />
                 <div className="bd-class-details-author-wrapper mt-35">
                   <div className="bd-class-details-author">
@@ -61,9 +69,7 @@ const ClassDetailsArea = ({ item }) => {
                     <div className="bd-class-details-author-name">
                       <span>{labels.classTeach}</span>
                       <h5>
-                        <Link href="/teachers">
-                          {item?.authorName ? item?.authorName : "Alexia Honix"}
-                        </Link>
+                        <Link href="/teachers">{instructor.name}</Link>
                       </h5>
                     </div>
                   </div>
@@ -72,7 +78,12 @@ const ClassDetailsArea = ({ item }) => {
                     <h5>Kindergarten</h5>
                   </div>
                   <div className="bd-class-details-cat">
-                    <span>${`${labels.pricePerUnit}/${item?.unit}`}</span>
+                    <span>
+                      $
+                      {`${labels.pricePerUnit}/${
+                        enumLabels?.priceUnit?.[clazz.priceUnit]
+                      }`}
+                    </span>
                     <h5>${item?.price}</h5>
                   </div>
                 </div>
@@ -84,7 +95,7 @@ const ClassDetailsArea = ({ item }) => {
 
       <ClassCat item={item} />
 
-      <ClassDetailsWidget item={item} />
+      <ClassDetailsWidget clazzLocalization={clazzLocalization} />
 
       {/* <ClassTimeTable />
 

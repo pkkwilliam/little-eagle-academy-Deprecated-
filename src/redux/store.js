@@ -6,6 +6,8 @@ import productSlice from "./features/product-slice";
 import cartSlice from "./features/cart-slice";
 import languageSlice from "./features/language-slice";
 import wishlistSlice from "./features/wishlist-slice";
+import classSlice from "./features/class-slice";
+import instructorSlice from "./features/instructor-slice";
 
 const createNoopStorage = () => {
   return {
@@ -37,6 +39,8 @@ const rootReducer = combineReducers({
   search: searchSlice,
   products: productSlice,
   cart: cartSlice,
+  class: classSlice,
+  instructor: instructorSlice,
   language: languageSlice,
   wishlist: wishlistSlice,
 });

@@ -100,6 +100,21 @@
       "key2": "洗手"
     }
   },
+  "enum": {
+    "cadence": {
+      "ONCE_PER_WEEK": "每周一次",
+      "TWICE_PER_WEEK": "每周两次",
+      "ONCE_PER_MONTH": "每月一次",
+      "TWICE_PER_MONTH": "每月两次"
+    },
+    "priceUnit": {
+      "CLASS": "课程"
+    },
+    "trialType": {
+      "FREE": "免费",
+      "NA": "无"
+    }
+  },
   "home": {
     "hero": {
       "label1": "幼儿园课程",

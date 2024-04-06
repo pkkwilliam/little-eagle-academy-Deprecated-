@@ -4,8 +4,7 @@ import Image from "next/image";
 import program_img from "@assets/img/program/details-1.jpg";
 
 const ClassDetailsWidget = (props) => {
-  const item = props?.item ?? {};
-
+  const { clazzLocalization } = props;
   return (
     <section className="bd-program-details-widget pb-70">
       <div className="container">
@@ -21,7 +20,9 @@ const ClassDetailsWidget = (props) => {
               </h3>
               <p
                 className="mb-25"
-                dangerouslySetInnerHTML={{ __html: item.wayToLearn }}
+                dangerouslySetInnerHTML={{
+                  __html: clazzLocalization.wayToLearn,
+                }}
               />
               {/* <div className="bd-program-details-btn">
                 <Link href="/about" className="bd-btn">

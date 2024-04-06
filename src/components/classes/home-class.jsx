@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Scrollbar, A11y, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
@@ -6,10 +6,25 @@ import class_data from "@data/class-data";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import { getClasses } from "src/middleware/apiDataService";
+import { store } from "src/redux/store";
 
 const HomeClass = () => {
-  const { languageLabel } = useSelector((state) => state.language);
+  const [classes, setClasses] = useState([]);
+  const { languageLabel, selectedLanguage } = useSelector(
+    (state) => state.language
+  );
   const labels = languageLabel?.home?.class ?? {};
+
+  const fetchClasses = async () => {
+    const classes = await getClasses(store);
+    setClasses(classes);
+  };
+
+  useEffect(() => {
+    fetchClasses();
+  }, []);
+
   return (
     <section className="bd-class-area pt-110 pb-120">
       <div className="container">
@@ -64,7 +79,9 @@ const HomeClass = () => {
                     },
                   }}
                 >
-                  {class_data.map((item, index) => {
+                  {classes.map((item, index) => {
+                    const clazz = item;
+                    const localizedClazz = clazz.localized[selectedLanguage];
                     return (
                       <SwiperSlide key={index}>
                         <div className="bd-class-wrapper text-center">
@@ -81,11 +98,11 @@ const HomeClass = () => {
                             </div>
                             <div className="bd-class-content">
                               <h3 className="bd-class-title">
-                                <Link href={`/class-details/${item.id}`}>
-                                  {item.title}
+                                <Link href={`/class-details/${clazz.id}`}>
+                                  {localizedClazz.name}
                                 </Link>
                               </h3>
-                              <p>{item.teaser.substring(0, 55)}...</p>
+                              <p>{localizedClazz.teaser}...</p>
                               <div className="bd-class-btn">
                                 <Link
                                   href={`/class-details/${item.id}`}
@@ -93,10 +110,10 @@ const HomeClass = () => {
                                 >
                                   <span className="bd-btn-inner">
                                     <span className="bd-btn-normal">
-                                      {item.btn}
+                                      View Detail
                                     </span>
                                     <span className="bd-btn-hover">
-                                      {item.btn}
+                                      View Detail
                                     </span>
                                   </span>
                                 </Link>

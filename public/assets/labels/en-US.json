@@ -100,6 +100,21 @@
       "key2": "Hand Washing"
     }
   },
+  "enum": {
+    "cadence": {
+      "ONCE_PER_WEEK": "Once per Week",
+      "TWICE_PER_WEEK": "Twice per Week",
+      "ONCE_PER_MONTH": "Once per Month",
+      "TWICE_PER_MONTH": "Twice per Month"
+    },
+    "priceUnit": {
+      "CLASS": "class"
+    },
+    "trialType": {
+      "FREE": "Free",
+      "NA": "N/A"
+    }
+  },
   "home": {
     "hero": {
       "label1": "Kindergarten Program",
