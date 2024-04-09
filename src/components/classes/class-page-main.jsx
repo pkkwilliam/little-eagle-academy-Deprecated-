@@ -42,8 +42,10 @@ const ClassPageMain = () => {
                 >
                   <div className="bd-class-thumb">
                     <Image
-                      src={img_1}
-                      style={{ width: "100%", height: "100%" }}
+                      src={item?.imageUrls?.[0] ? item.imageUrls?.[0] : img_1}
+                      // style={{ width: "100%", height: "100%" }}
+                      height={1}
+                      width={1}
                       alt="img not found"
                     />
                   </div>
@@ -59,8 +61,14 @@ const ClassPageMain = () => {
                         <div className="bd-class-meta-thumb">
                           <Link href={`/class-details/${item.id}`}>
                             <Image
-                              src={author_1}
-                              style={{ width: "100%", height: "100%" }}
+                              src={
+                                instructor?.imageUrls?.[0]
+                                  ? instructor.imageUrls[0]
+                                  : author_1
+                              }
+                              // style={{ width: "100%", height: "100%" }}
+                              height={1}
+                              width={1}
                               alt="img not found"
                             />
                           </Link>

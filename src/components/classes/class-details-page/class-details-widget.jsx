@@ -4,7 +4,7 @@ import Image from "next/image";
 import program_img from "@assets/img/program/details-1.jpg";
 
 const ClassDetailsWidget = (props) => {
-  const { clazzLocalization } = props;
+  const { clazz, clazzLocalization } = props;
   return (
     <section className="bd-program-details-widget pb-70">
       <div className="container">
@@ -42,8 +42,12 @@ const ClassDetailsWidget = (props) => {
             >
               <div className="bd-program-details-slider-thumb p-relative">
                 <Image
-                  src={program_img}
-                  style={{ width: "100%", height: "100%" }}
+                  src={
+                    clazz?.imageUrls?.[1] ? clazz?.imageUrls?.[1] : program_img
+                  }
+                  height={1}
+                  width={1}
+                  // style={{ width: "100%", height: "100%" }}
                   alt="img not found"
                 />
                 <div className="panel-2 wow"></div>

@@ -36,8 +36,10 @@ const ClassDetailsArea = ({ item }) => {
                 data-wow-delay=".3s"
               >
                 <Image
-                  src={item?.img ? item?.img : class_img}
-                  style={{ width: "100%", height: "100%" }}
+                  src={item?.imageUrls?.[0] ? item?.imageUrls?.[0] : class_img}
+                  // style={{ width: "100%", height: "100%" }}
+                  height={1}
+                  width={1}
                   alt="img not found"
                 />
                 <div className="panel wow"></div>
@@ -50,7 +52,7 @@ const ClassDetailsArea = ({ item }) => {
                 data-wow-delay=".3s"
               >
                 <h3 className="bd-class-details-widget-title mb-20">
-                  {item.title}
+                  {clazzLocalization.name}
                 </h3>
                 <p
                   className="mb-25"
@@ -62,8 +64,14 @@ const ClassDetailsArea = ({ item }) => {
                   <div className="bd-class-details-author">
                     <div className="bd-class-details-author-thumb">
                       <Image
-                        src={item?.authorImg ? item?.authorImg : author_img}
-                        style={{ width: "100%", height: "100%" }}
+                        src={
+                          instructor?.imageUrls?.[0]
+                            ? instructor.imageUrls[0]
+                            : author_img
+                        }
+                        // style={{ width: "100%", height: "100%" }}
+                        height={1}
+                        width={1}
                         alt="img not found"
                       />
                     </div>
@@ -98,7 +106,7 @@ const ClassDetailsArea = ({ item }) => {
 
       <ClassCat item={item} />
 
-      <ClassDetailsWidget clazzLocalization={clazzLocalization} />
+      <ClassDetailsWidget clazz={clazz} clazzLocalization={clazzLocalization} />
 
       {/* <ClassTimeTable />
 

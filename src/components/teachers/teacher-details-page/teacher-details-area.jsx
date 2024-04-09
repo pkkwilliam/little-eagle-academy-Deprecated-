@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 const TeacherDetailsArea = ({ item }) => {
   const { selectedLanguage } = useSelector((state) => state.language);
+  const instructor = item;
   const localizedInstructor = item?.localized?.[selectedLanguage] ?? {};
   return (
     <>
@@ -24,8 +25,14 @@ const TeacherDetailsArea = ({ item }) => {
                 <div className="bd-teacher-widget-thumb p-relative">
                   {
                     <Image
-                      src={img_2}
-                      style={{ width: "100%", height: "100%" }}
+                      src={
+                        instructor?.imageUrls?.[0]
+                          ? instructor.imageUrls[0]
+                          : img_2
+                      }
+                      height={1}
+                      width={1}
+                      // style={{ width: "100%", height: "100%" }}
                       alt="img not found"
                     />
                   }
