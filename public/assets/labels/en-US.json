@@ -4,6 +4,7 @@
   "emailUrl": "mailto:pkkwilliam919@gmail.com",
   "phoneNumber": "236-234-8383",
   "phoneNumberUrl": "tel:+12362348383",
+  "schoolName": "Little Eagle Academy",
   "component": {
     "classCat": {
       "age": "Age",
@@ -22,7 +23,11 @@
       "EnterYourEmailPlaceHolder": "Enter your email",
       "mobileNumberPlaceHolder": "Mobile number",
       "yourMessagePlaceHolder": "Your message",
-      "sendNowButton": "Send Now"
+      "sendNowButton": "Send Now",
+      "messageFailedToSend": "Something went wrong. Please try again.",
+      "messageReceived": "Message Received!",
+      "messageSentToast": "Message Received.",
+      "sendUsAnotherMessage": "Send us another message."
     },
     "contactFormMain": {
       "title": "Contact Us Right Here"
@@ -90,7 +95,10 @@
       "title": "Join Our Newsletter",
       "description": "Subscribe our newsletter to get our latest update & news.",
       "subscribeNowButton": "Subscribe now",
-      "yourEmailPlaceHolder": "your email"
+      "yourEmailPlaceHolder": "your email",
+      "subscribed": "Subscribed!",
+      "subscribedSuccessToast": "Subscribed.",
+      "subscriptionRequestFailed": "Something went wrong. Please try again."
     },
     "programPromotion": {
       "title": "Health and Safety",

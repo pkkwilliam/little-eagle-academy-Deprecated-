@@ -4,8 +4,11 @@ import Image from "next/image";
 import bg from "@assets/img/bg/breadcrumb-bg.jpg";
 import line_1 from "@assets/img/shape/white-curved-line.png";
 import line_2 from "@assets/img/shape/curved-line-2.png";
+import { useSelector } from "react-redux";
 
 const Breadcrumb = ({ title, subTitle }) => {
+  const { languageLabel } = useSelector((state) => state.language);
+  const labels = languageLabel ?? {};
   return (
     <section className="bd-breadcrumb-area p-relative fix theme-bg">
       <div
@@ -38,7 +41,8 @@ const Breadcrumb = ({ title, subTitle }) => {
                   <div className="bd-breadcrumb-list">
                     <span>
                       <Link href="/">
-                        <i className="flaticon-hut"></i>Little Eagle Academy
+                        <i className="flaticon-hut"></i>
+                        {labels.schoolName}
                       </Link>
                     </span>
                     <span>{subTitle}</span>

@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 // internal
 import { contact_schema } from "@utils/validation-schema";
 import ErrorMsg from "./error-msg";
 import { useSelector } from "react-redux";
+import execute from "src/middleware/serviceExecutor";
+import { CONTACT_US } from "src/middleware/api";
+import { toast } from "react-toastify";
+
+const CONTACT_US_DELAY_MILLIS = 1500;
 
 const ContactForm = () => {
+  const [messageSent, setMessageSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const { languageLabel } = useSelector((state) => state.language);
   const labels = languageLabel?.component?.contactForm ?? {};
 
@@ -15,16 +22,54 @@ const ContactForm = () => {
       initialValues: {
         name: "",
         email: "",
-        phone: "",
-        company: "",
-        msg: "",
+        number: "",
+        message: "",
       },
       validationSchema: contact_schema,
-      onSubmit: (values, { resetForm }) => {
-        console.log(values);
-        resetForm();
+      onSubmit: async (values, { resetForm }) => {
+        const startMillis = new Date().getMilliseconds();
+        setSending(true);
+        execute(CONTACT_US(values))
+          .then((response) => {
+            const millisTookToProcess =
+              new Date().getMilliseconds() - startMillis;
+            setTimeout(() => {
+              setSending(false);
+              setMessageSent(true);
+              toast.success(labels.messageSentToast, {
+                position: "top-right",
+              });
+              resetForm();
+            }, CONTACT_US_DELAY_MILLIS - millisTookToProcess);
+          })
+          .catch((error) => {
+            toast.error(labels.messageFailedToSend);
+            setSending(false);
+          });
       },
     });
+  if (sending) {
+    return <div class="spinner-border text-secondary" role="status" />;
+  } else if (messageSent) {
+    return (
+      <div
+        className="container"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h4>{labels.messageReceived}</h4>
+        <button className="bd-btn" onClick={() => setMessageSent(false)}>
+          <span className="bd-btn-inner">
+            <span className="bd-btn-normal">{labels.sendUsAnotherMessage}</span>
+            <span className="bd-btn-hover">{labels.sendUsAnotherMessage}</span>
+          </span>
+        </button>
+      </div>
+    );
+  }
   return (
     <form id="contact-form" onSubmit={handleSubmit}>
       <div className="row">
@@ -59,15 +104,15 @@ const ContactForm = () => {
         <div className="col-md-12">
           <div className="bd-contact-input mb-30">
             <input
-              name="phone"
-              value={values.phone}
+              name="number"
+              value={values.number}
               onChange={handleChange}
               onBlur={handleBlur}
               type="text"
               placeholder={labels.mobileNumberPlaceHolder}
-              id="phone"
+              id="number"
             />
-            {touched.phone && <ErrorMsg error={errors.phone} />}
+            {touched.number && <ErrorMsg error={errors.number} />}
           </div>
         </div>
         {/* <div className="col-md-6">
@@ -83,14 +128,14 @@ const ContactForm = () => {
         <div className="col-md-12">
           <div className="bd-contact-input mb-20">
             <textarea
-              name="msg"
-              value={values.msg}
+              name="message"
+              value={values.message}
               onChange={handleChange}
               onBlur={handleBlur}
-              id="msg"
+              id="message"
               placeholder={labels.yourMessagePlaceHolder}
             ></textarea>
-            {touched.msg && <ErrorMsg error={errors.msg} />}
+            {touched.message && <ErrorMsg error={errors.message} />}
           </div>
         </div>
         {/* <div className="col-md-12">

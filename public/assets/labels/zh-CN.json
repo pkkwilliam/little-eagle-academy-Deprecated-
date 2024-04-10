@@ -4,6 +4,7 @@
   "emailUrl": "mailto:pkkwilliam919@gmail.com",
   "phoneNumber": "236-234-8383",
   "phoneNumberUrl": "tel:+12362348383",
+  "schoolName": "雏鹰学院",
   "component": {
     "classCat": {
       "age": "年龄",
@@ -22,7 +23,11 @@
       "EnterYourEmailPlaceHolder": "输入您的电子邮件",
       "mobileNumberPlaceHolder": "手机号码",
       "yourMessagePlaceHolder": "您的留言",
-      "sendNowButton": "立即发送"
+      "sendNowButton": "立即发送",
+      "messageFailedToSend": "发送消息失败，请重试。",
+      "messageReceived": "消息已接收！",
+      "messageSentToast": "消息已接收。",
+      "sendUsAnotherMessage": "再发送一则消息给我们。"
     },
     "contactFormMain": {
       "title": "就在这里联系我们"
@@ -90,7 +95,10 @@
       "title": "加入我们的电子报",
       "description": "订阅我们的电子报，获取我们的最新更新和新闻。",
       "subscribeNowButton": "立即订阅",
-      "yourEmailPlaceHolder": "您的电子邮件"
+      "yourEmailPlaceHolder": "您的电子邮件",
+      "subscribed": "已订阅！",
+      "subscribedSuccessToast": "已订阅。",
+      "subscriptionRequestFailed": "出了些问题。请重试。"
     },
     "programPromotion": {
       "title": "健康与安全",
