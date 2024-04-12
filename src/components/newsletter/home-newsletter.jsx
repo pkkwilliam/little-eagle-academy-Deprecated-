@@ -99,6 +99,7 @@ const SubscribeSuccess = ({ labels }) => {
         display: "flex",
         justifyContent: "center",
         padding: 5,
+        margin: 20,
       }}
     >
       <h4>{labels.subscribed}</h4>

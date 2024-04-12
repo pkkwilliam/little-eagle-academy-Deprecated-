@@ -4,12 +4,19 @@ const execute = async (api) => {
     method,
     body,
     headers: new Headers({ "content-type": "application/json" }),
-  }).then((result) => {
-    if (result.status >= 400) {
-      throw result.statusText;
-    }
-    return result.json();
-  });
+  })
+    .then((result) => {
+      if (result.status >= 400) {
+        throw result.statusText;
+      }
+      return result.text();
+    })
+    .then((json) => {
+      if (!json) {
+        return;
+      }
+      return JSON.parse(json);
+    });
 };
 
 export default execute;
