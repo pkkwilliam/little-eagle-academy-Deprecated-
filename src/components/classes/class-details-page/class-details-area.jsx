@@ -51,16 +51,20 @@ const ClassDetailsArea = ({ item }) => {
                 data-wow-duration="1s"
                 data-wow-delay=".3s"
               >
-                <h3 className="bd-class-details-widget-title mb-20">
-                  {clazzLocalization.name}
-                </h3>
+                <h3
+                  className="bd-class-details-widget-title mb-20"
+                  dangerouslySetInnerHTML={{ __html: clazzLocalization.name }}
+                />
                 <p
                   className="mb-25"
                   dangerouslySetInnerHTML={{
                     __html: clazzLocalization.description,
                   }}
                 />
-                <div className="bd-class-details-author-wrapper mt-35">
+                <div
+                  className="bd-class-details-author-wrapper mt-35"
+                  style={{ display: "flex" }}
+                >
                   <div className="bd-class-details-author">
                     <div className="bd-class-details-author-thumb">
                       <Image
@@ -84,10 +88,10 @@ const ClassDetailsArea = ({ item }) => {
                       </h5>
                     </div>
                   </div>
-                  <div className="bd-class-details-cat">
+                  {/* <div className="bd-class-details-cat">
                     <span>{labels.category}</span>
                     <h5>Kindergarten</h5>
-                  </div>
+                  </div> */}
                   <div className="bd-class-details-cat">
                     <span>
                       $
