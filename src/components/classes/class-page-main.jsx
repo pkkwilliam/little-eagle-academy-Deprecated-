@@ -51,9 +51,10 @@ const ClassPageMain = () => {
                   </div>
                   <div className="bd-class-content-3 theme-bg-6 ">
                     <h3 className="bd-class-title-3">
-                      <Link href={`/class-details/${item.id}`}>
-                        {clazz.name}
-                      </Link>
+                      <Link
+                        href={`/class-details/${item.id}`}
+                        dangerouslySetInnerHTML={{ __html: clazz.name }}
+                      ></Link>
                     </h3>
                     <p className="mb-20">{clazz.teaser}</p>
                     <div className="bd-class-meta-wrapper d-flex justify-content-between align-items-center flex-wrap">
