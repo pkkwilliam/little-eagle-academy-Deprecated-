@@ -43,12 +43,13 @@ export default function TeacherDetails() {
 
 export async function getStaticPaths() {
   return {
-    paths: ["/teachers"], //indicates that no page needs be created at build time
-    fallback: true, //indicates the type of fallback
+    paths: [], //indicates that no page needs be created at build time
+    fallback: "blocking", //indicates the type of fallback
   };
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps({ params }) {
+  console.log("ppp"), params;
   return {
     props: { params: { id: "1" } },
   };
