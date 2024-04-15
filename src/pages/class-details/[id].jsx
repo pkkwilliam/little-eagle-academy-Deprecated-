@@ -33,10 +33,11 @@ export default function ClassDetails() {
 
   //   return () => {};
   // }, [id]);
-  const clazzDetail = classes.find((clazz) => clazz.id === selectedId) || {};
   if (!selectedId) {
     return <h1>Loading...</h1>;
   }
+  const clazzDetail = classes.find((clazz) => clazz.id === selectedId) || {};
+
   return (
     <Wrapper>
       <SEO pageTitle={"Class Details"} />
@@ -49,17 +50,3 @@ export default function ClassDetails() {
     </Wrapper>
   );
 }
-
-// export async function getStaticPaths() {
-//   return {
-//     paths: [], //indicates that no page needs be created at build time
-//     fallback: "blocking", //indicates the type of fallback
-//   };
-// }
-
-// export async function getStaticProps({ params }) {
-//   console.log("ppp"), params;
-//   return {
-//     props: { params: { id: "1" } },
-//   };
-// }
