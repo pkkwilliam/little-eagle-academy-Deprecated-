@@ -47,3 +47,9 @@ export async function getStaticPaths() {
     fallback: true, //indicates the type of fallback
   };
 }
+
+export async function getStaticProps(context) {
+  return {
+    props: {},
+  };
+}
