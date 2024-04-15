@@ -137,9 +137,8 @@ const ClassDetailsArea = (props) => {
 
 export async function getStaticProps(context) {
   return {
-    props: {},
-    paths: [], //indicates that no page needs be created at build time
-    fallback: "blocking", //indicates the type of fallback
+    paths: ["/classes"], //indicates that no page needs be created at build time
+    fallback: true, //indicates the type of fallback
   };
 }
 
