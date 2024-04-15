@@ -4,7 +4,7 @@ import execute from "./serviceExecutor";
 import { setInstructors } from "src/redux/features/instructor-slice";
 
 const useStatic = false;
-const useCache = false;
+const useCache = true;
 
 export const getClasses = async (store) => {
   if (useStatic) {
