@@ -50,6 +50,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   return {
-    props: {},
+    props: { params: { id: "1" } },
   };
 }
