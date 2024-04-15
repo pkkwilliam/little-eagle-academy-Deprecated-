@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ClassCat from "./class-cat";
 import ClassDetailsWidget from "./class-details-widget";
 import ClassTimeTable from "./class-time-table";
@@ -9,11 +9,27 @@ import class_img from "@assets/img/class/6.jpg";
 import author_img from "@assets/img/program/author-1.png";
 import Breadcrumb from "@components/common/breadcrumb/breadcrumb";
 import { useSelector } from "react-redux";
+import { getClasses } from "src/middleware/apiDataService";
+import { store } from "src/redux/store";
+import { useRouter } from "next/router";
 
-const ClassDetailsArea = ({ item }) => {
+const ClassDetailsArea = (props) => {
+  const router = useRouter();
+  const id = router.query.id;
+  const [item, setItem] = useState({ id });
   const { languageLabel, selectedLanguage } = useSelector(
     (state) => state.language
   );
+
+  const fetchClasses = async () => {
+    const classes = await getClasses(store);
+    setItem(classes.find((clazz) => clazz.id === id));
+  };
+
+  useEffect(() => {
+    fetchClasses();
+  }, [id]);
+
   const enumLabels = languageLabel?.enum ?? {};
   const labels = languageLabel?.component?.classDetailsArea ?? {};
   const clazz = item;

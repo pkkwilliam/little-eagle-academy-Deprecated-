@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TeacherSkills from "./teacher-skills";
 import TeacherInfo from "./teacher-info";
 import Breadcrumb from "@components/common/breadcrumb/breadcrumb";
 import Image from "next/image";
 import img_2 from "@assets/img/teacher/2.jpg";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { getInstructors } from "src/middleware/apiDataService";
+import { store } from "src/redux/store";
 
-const TeacherDetailsArea = ({ item }) => {
+const TeacherDetailsArea = (props) => {
+  const [instructor, setInstructor] = useState({});
   const { selectedLanguage } = useSelector((state) => state.language);
-  const instructor = item;
-  const localizedInstructor = item?.localized?.[selectedLanguage] ?? {};
+  const localizedInstructor = instructor?.localized?.[selectedLanguage] ?? {};
+
+  const router = useRouter();
+  const id = router.query.id;
+
+  useEffect(() => {
+    fetchInstructor();
+  }, [id]);
+
+  const fetchInstructor = async () => {
+    const instructrosResult = await getInstructors(store);
+    setInstructor(instructrosResult.find((result) => result.id === id));
+  };
+
   return (
     <>
       <Breadcrumb title="Teacher Details" subTitle="Teacher Details" />
