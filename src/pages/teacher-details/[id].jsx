@@ -40,3 +40,9 @@ export default function TeacherDetails() {
     </Wrapper>
   );
 }
+
+export async function getServerSideProps(context) {
+  return {
+    props: {},
+  };
+}

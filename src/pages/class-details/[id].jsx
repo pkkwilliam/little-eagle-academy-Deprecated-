@@ -49,3 +49,9 @@ export default function ClassDetails() {
     </Wrapper>
   );
 }
+
+export async function getServerSideProps(context) {
+  return {
+    props: {},
+  };
+}

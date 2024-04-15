@@ -1,10 +1,21 @@
-import { setClasses } from "src/redux/features/class-slice";
+import { clearClasses, setClasses } from "src/redux/features/class-slice";
 import { GET_CLASSES, GET_INSTRUCTORS } from "./api";
 import execute from "./serviceExecutor";
-import { setInstructors } from "src/redux/features/instructor-slice";
+import {
+  clearInstructors,
+  setInstructors,
+} from "src/redux/features/instructor-slice";
 
 const useStatic = false;
 const useCache = true;
+
+export const clearClassesCache = async (store) => {
+  store.dispatch(clearClasses());
+};
+
+export const clearInstructorCache = async (store) => {
+  store.dispatch(clearInstructors());
+};
 
 export const getClasses = async (store) => {
   if (useStatic) {

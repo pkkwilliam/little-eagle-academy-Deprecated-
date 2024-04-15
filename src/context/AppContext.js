@@ -2,13 +2,13 @@ import React, { createContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, selectProducts } from "../redux/features/product-slice";
 import { selectLanguage } from "src/redux/features/language-slice";
-import { getClasses, getInstructors } from "src/middleware/apiDataService";
-import { store } from "src/redux/store";
 import {
-  clearInstructors,
-  setInstructors,
-} from "src/redux/features/instructor-slice";
-import { clearClasses, setClasses } from "src/redux/features/class-slice";
+  clearClassesCache,
+  clearInstructorCache,
+  getClasses,
+  getInstructors,
+} from "src/middleware/apiDataService";
+import { store } from "src/redux/store";
 
 export const AppContext = createContext();
 
@@ -30,12 +30,10 @@ const AppProvider = ({ children }) => {
 
   const initBasicInfo = async () => {
     console.log("initBasicInfo");
-    clearClasses();
-    clearInstructors();
-    const clazzesResult = await getClasses(store);
-    const instructrosResult = await getInstructors(store);
-    setClasses(clazzesResult);
-    setInstructors(instructrosResult);
+    clearClassesCache(store);
+    clearInstructorCache(store);
+    getClasses(store);
+    getInstructors(store);
   };
 
   useEffect(() => {

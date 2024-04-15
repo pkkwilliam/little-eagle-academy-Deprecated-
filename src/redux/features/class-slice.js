@@ -9,11 +9,16 @@ export const classSlice = createSlice({
   name: "class",
   initialState,
   reducers: {
-    clearClasses: (state, {}) => {
-      (state.classes = []), (state.dirty = true);
+    clearClasses: (state, { payload }) => {
+      state.classes = [];
+      state.dirty = true;
     },
     setClasses: (state, { payload }) => {
       (state.classes = payload), (state.dirty = false);
+    },
+    setClasses: (state, { payload }) => {
+      state.classes = payload;
+      state.dirty = false;
     },
   },
 });

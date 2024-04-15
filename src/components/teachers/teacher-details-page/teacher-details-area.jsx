@@ -105,3 +105,9 @@ const TeacherDetailsArea = (props) => {
 };
 
 export default TeacherDetailsArea;
+
+export async function getServerSideProps(context) {
+  return {
+    props: {},
+  };
+}
