@@ -135,11 +135,4 @@ const ClassDetailsArea = (props) => {
   );
 };
 
-export async function getStaticPaths(context) {
-  return {
-    paths: ["/classes"], //indicates that no page needs be created at build time
-    fallback: true, //indicates the type of fallback
-  };
-}
-
 export default ClassDetailsArea;
