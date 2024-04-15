@@ -50,7 +50,7 @@ export default function ClassDetails() {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticPaths(context) {
   return {
     paths: ["/classes"], //indicates that no page needs be created at build time
     fallback: true, //indicates the type of fallback

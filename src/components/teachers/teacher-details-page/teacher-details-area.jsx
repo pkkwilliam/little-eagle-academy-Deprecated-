@@ -106,7 +106,7 @@ const TeacherDetailsArea = (props) => {
 
 export default TeacherDetailsArea;
 
-export async function getStaticProps(context) {
+export async function getStaticPaths(context) {
   return {
     paths: ["/teachers"], //indicates that no page needs be created at build time
     fallback: true, //indicates the type of fallback
