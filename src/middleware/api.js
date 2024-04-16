@@ -24,5 +24,5 @@ export const SUBSCRIBE_NEWS_LETTER = (payload) => ({
 });
 
 function getDomain() {
-  return process.env.NODE_ENV === "development" ? PROD_DOMAIN : PROD_DOMAIN;
+  return process.env.NODE_ENV === "development" ? LOCAL_DOMAIN : PROD_DOMAIN;
 }

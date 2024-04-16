@@ -9,7 +9,9 @@ import HeaderFour from "@layout/headers/headerFour";
 import { Wrapper } from "@layout/index";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { GET_CLASSES } from "src/middleware/api";
 import { getClasses } from "src/middleware/apiDataService";
+import execute from "src/middleware/serviceExecutor";
 import { store } from "src/redux/store";
 
 export default function ClassDetails() {
@@ -49,4 +51,24 @@ export default function ClassDetails() {
       <Footer />
     </Wrapper>
   );
+}
+
+// Define paths for dynamic routes
+export async function getStaticPaths({ params }) {
+  const clazzes = await execute(GET_CLASSES());
+  const paths = clazzes.map((clazz) => ({ params: { clazz } }));
+
+  // Return an empty array for dynamic paths, Next.js will generate them at build time
+  return {
+    paths,
+    fallback: false, // Show loading state until data is fetched
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { clazz } = params;
+  // Fetch item data based on the ID from an API
+  return {
+    props: { clazz },
+  };
 }
