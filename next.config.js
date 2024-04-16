@@ -6,10 +6,11 @@ const nextConfig = {
     unoptimized: true,
   },
   async rewrites() {
+    console.log("Rewrites called");
     return [
       {
         source: "/class-details/:id",
-        destination: "/class-details/[id]", // The :path parameter is used here so will not be automatically passed in the query
+        destination: "/class-details/[id]",
       },
     ];
   },
