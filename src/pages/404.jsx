@@ -5,17 +5,18 @@ import HomeNewsletter from "@components/newsletter/home-newsletter";
 import Breadcrumb from "@components/common/breadcrumb/breadcrumb";
 import ErrorPageMain from "@components/error/error-page-main";
 import HeaderFour from "@layout/headers/headerFour";
-
+import Home from "src/pages/index";
 
 export default function Error() {
-  return (
-    <Wrapper>
-      <SEO pageTitle={'404 Not Found'} />
-      <HeaderFour />
-      <Breadcrumb title="404 page" subTitle="404 page" />
-      <ErrorPageMain />
-      <HomeNewsletter />
-      <Footer/>
-    </Wrapper>
-  )
+  // return (
+  //   <Wrapper>
+  //     <SEO pageTitle={"404 Not Found"} />
+  //     <HeaderFour />
+  //     <Breadcrumb title="404 page" subTitle="404 page" />
+  //     <ErrorPageMain />
+  //     <HomeNewsletter />
+  //     <Footer />
+  //   </Wrapper>
+  // );
+  return <Home />;
 }
