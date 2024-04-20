@@ -26,14 +26,14 @@ export default function TeacherDetails() {
 
   const fetchInstructor = async () => {
     const instructrosResult = await getInstructors(store);
-    setInstructor(instructrosResult.find((result) => result.id === id));
+    setInstructor(instructrosResult.find((result) => result.name === id));
   };
 
   return (
     <Wrapper>
       <SEO pageTitle={"Teacher Details"} />
       <HeaderFour />
-      <TeacherDetailsArea item={instructor} />
+      <TeacherDetailsArea instructor={instructor} />
       <TeacherTimeTable />
       <HomeNewsletter />
       <Footer />

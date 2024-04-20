@@ -38,7 +38,8 @@ export default function ClassDetails() {
   if (!selectedId) {
     return <h1>Loading...</h1>;
   }
-  const clazzDetail = classes.find((clazz) => clazz.id === selectedId) || {};
+  const clazzDetail =
+    classes.find((clazz) => clazz.codeName === selectedId) || {};
 
   return (
     <Wrapper>
@@ -54,21 +55,21 @@ export default function ClassDetails() {
 }
 
 // Define paths for dynamic routes
-export async function getStaticPaths({ params }) {
-  const clazzes = await execute(GET_CLASSES());
-  const paths = clazzes.map((clazz) => ({ params: { clazz } }));
+// export async function getStaticPaths({ params }) {
+//   const clazzes = await execute(GET_CLASSES());
+//   const paths = clazzes.map((clazz) => ({ params: { clazz } }));
 
-  // Return an empty array for dynamic paths, Next.js will generate them at build time
-  return {
-    paths,
-    fallback: false, // Show loading state until data is fetched
-  };
-}
+//   // Return an empty array for dynamic paths, Next.js will generate them at build time
+//   return {
+//     paths,
+//     fallback: false, // Show loading state until data is fetched
+//   };
+// }
 
-export async function getStaticProps({ params }) {
-  const { clazz } = params;
-  // Fetch item data based on the ID from an API
-  return {
-    props: { clazz },
-  };
-}
+// export async function getStaticProps({ params }) {
+//   const { clazz } = params;
+//   // Fetch item data based on the ID from an API
+//   return {
+//     props: { clazz },
+//   };
+// }

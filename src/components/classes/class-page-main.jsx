@@ -52,7 +52,7 @@ const ClassPageMain = () => {
                   <div className="bd-class-content-3 theme-bg-6 ">
                     <h3 className="bd-class-title-3">
                       <Link
-                        href={`/class-details/${item.id}`}
+                        href={`/class-details/${item.codeName}`}
                         dangerouslySetInnerHTML={{ __html: clazz.name }}
                       ></Link>
                     </h3>
@@ -60,7 +60,7 @@ const ClassPageMain = () => {
                     <div className="bd-class-meta-wrapper d-flex justify-content-between align-items-center flex-wrap">
                       <div className="bd-class-meta d-flex align-items-center flex-wrap">
                         <div className="bd-class-meta-thumb">
-                          <Link href={`/class-details/${item.id}`}>
+                          <Link href={`/class-details/${item.codeName}`}>
                             <Image
                               src={
                                 instructor?.imageUrls?.[0]
@@ -75,7 +75,7 @@ const ClassPageMain = () => {
                           </Link>
                         </div>
                         <span>
-                          <Link href={`/teacher-details/${instructor.id}`}>
+                          <Link href={`/teacher-details/${instructor.name}`}>
                             {localizedInstructor.name}
                           </Link>
                         </span>
@@ -89,7 +89,9 @@ const ClassPageMain = () => {
                     </div>
                   </div>
                   <div className="bd-class-btn-3 theme-bg-2 text-center">
-                    <Link href={`/class-details/${item.id}`}>View Detail</Link>
+                    <Link href={`/class-details/${item.codeName}`}>
+                      View Detail
+                    </Link>
                   </div>
                 </div>
               </div>

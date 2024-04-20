@@ -9,22 +9,9 @@ import { useRouter } from "next/router";
 import { getInstructors } from "src/middleware/apiDataService";
 import { store } from "src/redux/store";
 
-const TeacherDetailsArea = (props) => {
-  const [instructor, setInstructor] = useState({});
+const TeacherDetailsArea = ({ instructor }) => {
   const { selectedLanguage } = useSelector((state) => state.language);
   const localizedInstructor = instructor?.localized?.[selectedLanguage] ?? {};
-
-  const router = useRouter();
-  const id = router.query.id;
-
-  useEffect(() => {
-    fetchInstructor();
-  }, [id]);
-
-  const fetchInstructor = async () => {
-    const instructrosResult = await getInstructors(store);
-    setInstructor(instructrosResult.find((result) => result.id === id));
-  };
 
   return (
     <>

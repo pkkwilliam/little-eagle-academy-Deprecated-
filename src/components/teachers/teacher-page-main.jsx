@@ -33,7 +33,7 @@ const TeacherPageMain = () => {
                   data-wow-duration="1s"
                   data-wow-delay={item.delay}
                 >
-                  <Link href={`/teacher-details/${item.id}`}>
+                  <Link href={`/teacher-details/${item.name}`}>
                     <div className="bd-teacher-thumb">
                       <Image
                         src={img_1}
@@ -45,7 +45,7 @@ const TeacherPageMain = () => {
                   <div className="bd-teacher-content-wrapper">
                     <div className="bd-teacher-content">
                       <h4 className="bd-teacher-title">
-                        <Link href={`/teacher-details/${item.id}`}>
+                        <Link href={`/teacher-details/${item.name}`}>
                           {localizedInstructor.name}
                         </Link>
                       </h4>

@@ -90,7 +90,7 @@ const HomeTeacher = () => {
                     return (
                       <SwiperSlide key={index}>
                         <div className="bd-teacher">
-                          <Link href={`/teacher-details/${instructor.id}`}>
+                          <Link href={`/teacher-details/${instructor.name}`}>
                             <div className="bd-teacher-thumb">
                               <Image
                                 src={img_1}
@@ -103,7 +103,7 @@ const HomeTeacher = () => {
                             <div className="bd-teacher-content">
                               <h4 className="bd-teacher-title">
                                 <Link
-                                  href={`/teacher-details/${instructor.id}`}
+                                  href={`/teacher-details/${instructor.name}`}
                                 >
                                   {localizedInstructor.name}
                                 </Link>

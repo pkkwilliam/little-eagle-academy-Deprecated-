@@ -9,26 +9,11 @@ import class_img from "@assets/img/class/6.jpg";
 import author_img from "@assets/img/program/author-1.png";
 import Breadcrumb from "@components/common/breadcrumb/breadcrumb";
 import { useSelector } from "react-redux";
-import { getClasses } from "src/middleware/apiDataService";
-import { store } from "src/redux/store";
-import { useRouter } from "next/router";
 
-const ClassDetailsArea = (props) => {
-  const router = useRouter();
-  const id = router.query.id;
-  const [item, setItem] = useState({ id });
+const ClassDetailsArea = ({ item }) => {
   const { languageLabel, selectedLanguage } = useSelector(
     (state) => state.language
   );
-
-  const fetchClasses = async () => {
-    const classes = await getClasses(store);
-    setItem(classes.find((clazz) => clazz.id === id));
-  };
-
-  useEffect(() => {
-    fetchClasses();
-  }, [id]);
 
   const enumLabels = languageLabel?.enum ?? {};
   const labels = languageLabel?.component?.classDetailsArea ?? {};
@@ -98,7 +83,7 @@ const ClassDetailsArea = (props) => {
                     <div className="bd-class-details-author-name">
                       <span>{labels.classTeach}</span>
                       <h5>
-                        <Link href={`/teacher-details/${instructor.id}`}>
+                        <Link href={`/teacher-details/${instructor.name}`}>
                           {localizedInstructor.name}
                         </Link>
                       </h5>

@@ -99,14 +99,17 @@ const HomeClass = () => {
                             </div>
                             <div className="bd-class-content">
                               <h3 className="bd-class-title">
-                                <Link href={`/class-details/${clazz.id}`}>
-                                  {localizedClazz.name}
-                                </Link>
+                                <Link
+                                  href={`/class-details/${clazz.codeName}`}
+                                  dangerouslySetInnerHTML={{
+                                    __html: localizedClazz.name,
+                                  }}
+                                />
                               </h3>
                               <p>{localizedClazz.teaser}...</p>
                               <div className="bd-class-btn">
                                 <Link
-                                  href={`/class-details/${item.id}`}
+                                  href={`/class-details/${item.codeName}`}
                                   className="bd-btn bd-btn-grey"
                                 >
                                   <span className="bd-btn-inner">
