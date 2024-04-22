@@ -10,13 +10,13 @@ const menu_data = [
     link: "/",
     label: "home",
   },
-  {
-    id: 2,
-    hasDropdown: false,
-    title: "About Us",
-    link: "/about",
-    label: "aboutUs",
-  },
+  // {
+  //   id: 2,
+  //   hasDropdown: false,
+  //   title: "About Us",
+  //   link: "/about",
+  //   label: "aboutUs",
+  // },
   {
     id: 3,
     title: "Classes",
@@ -24,13 +24,13 @@ const menu_data = [
     link: "/classes",
     label: "classes",
   },
-  {
-    id: 6,
-    hasDropdown: false,
-    title: "News & Events",
-    link: "/news",
-    label: "newsAndEvents",
-  },
+  // {
+  //   id: 6,
+  //   hasDropdown: false,
+  //   title: "News & Events",
+  //   link: "/news",
+  //   label: "newsAndEvents",
+  // },
   {
     id: 7,
     hasDropdown: false,

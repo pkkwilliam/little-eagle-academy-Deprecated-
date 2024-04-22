@@ -87,8 +87,12 @@ const HomeHero = () => {
                   <div className="bd-hero-thumb-3 p-relative">
                     <div className="bd-hero-thumb-3-mask">
                       <Image
-                        src={heroImg}
-                        style={{ width: "auto", height: "100%" }}
+                        src={
+                          "https://raw.githubusercontent.com/pkkwilliam/github.io-contents/master/image/general_1.jpg"
+                        }
+                        width={300}
+                        height={300}
+                        style={{ height: "100%", width: "100%" }}
                         alt="img not found"
                       />
                     </div>

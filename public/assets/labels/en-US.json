@@ -33,7 +33,7 @@
       "title": "Contact Us Right Here"
     },
     "footer": {
-      "teaser": "In our Adult Participation programs, for most students, it is their first program in Kindedo.",
+      "teaser": "Little Eagle Academy",
       "socialTitle": "Social",
       "newsTitle": "Join Our Newsletter",
       "newsBtn": "Subscribe now",
@@ -47,37 +47,14 @@
             "menu": "Classes",
             "path": "/classes"
           },
-          {
-            "menu": "News",
-            "path": "/news"
-          },
-          {
-            "menu": "About",
-            "path": "/about"
-          },
+
           {
             "menu": "Contact",
             "path": "/contact"
           }
         ]
       },
-      "social_icons": [
-        {
-          "icon": "fa-brands fa-facebook-f",
-          "url": "https://www.facebook.com/",
-          "name": "Facebook"
-        },
-        {
-          "icon": "fa-brands fa-twitter",
-          "url": "https://twitter.com/",
-          "name": "Twitter"
-        },
-        {
-          "icon": "fa-brands fa-youtube",
-          "url": "https://www.youtube.com/",
-          "name": "Youtube"
-        }
-      ]
+      "social_icons": []
     },
     "hamburgerMenu": {
       "aboutOurSchoolTitle": "About Little Eagle Academy",
@@ -125,13 +102,13 @@
   },
   "home": {
     "hero": {
-      "label1": "Kindergarten Program",
-      "label2": "Best Children’s Education",
-      "admissionButton": "Admission open 22-23"
+      "label1": "Enrichment Program",
+      "label2": "Children's Academic Playground",
+      "admissionButton": "Now Enrolling"
     },
     "class": {
       "title": "Our Class",
-      "description": "Our multi-level kindergarten programs cater to the age group of 2-5 years<br/> with a curriculum focussing children."
+      "description": "Our small-sized classes cater to the age group of 2-13 years<br/> with a curriculum focussing children."
     },
     "promotion": {
       "title": "Best for Your Kids",
@@ -166,11 +143,11 @@
     },
     "banner": {
       "title": "Join Our New Session",
-      "description": "Kindedo believes that good questions drive good answers.Whether it's a query<br /> about the world around us or a challenge.",
+      "description": "Little Eagle Academy believes that good questions drive good answers.<br />Whether it's a query about the world around us or a challenge.",
       "applyNowButton": "Apply Now"
     },
     "teacher": {
-      "title": "Our Best Teachers",
+      "title": "Our Teachers",
       "description": "With the help of teachers and the environment as the third teacher, students<br /> have opportunities to confidently take risks."
     }
   },

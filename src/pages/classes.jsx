@@ -19,7 +19,7 @@ export default function Classes() {
       <Breadcrumb title={labels.classes} subTitle={labels.classes} />
       <ClassPageMain />
       {/* <AboutTestimonial /> */}
-      <ProgramPromotion />
+      {/* <ProgramPromotion /> */}
       <HomeNewsletter />
       <Footer />
     </Wrapper>

@@ -33,7 +33,7 @@
       "title": "就在這裡聯繫我們"
     },
     "footer": {
-      "teaser": "在我們的成人參與計劃中，對大多數學生而言，這是他們在Kindedo的第一個計劃。",
+      "teaser": "雛鷹學院",
       "socialTitle": "社交",
       "newsTitle": "訂閱我們的通訊",
       "newsBtn": "立即訂閱",
@@ -48,36 +48,12 @@
             "path": "/classes"
           },
           {
-            "menu": "新聞",
-            "path": "/news"
-          },
-          {
-            "menu": "關於",
-            "path": "/about"
-          },
-          {
             "menu": "聯繫",
             "path": "/contact"
           }
         ]
       },
-      "social_icons": [
-        {
-          "icon": "fa-brands fa-facebook-f",
-          "url": "https://www.facebook.com/",
-          "name": "Facebook"
-        },
-        {
-          "icon": "fa-brands fa-twitter",
-          "url": "https://twitter.com/",
-          "name": "Twitter"
-        },
-        {
-          "icon": "fa-brands fa-youtube",
-          "url": "https://www.youtube.com/",
-          "name": "Youtube"
-        }
-      ]
+      "social_icons": []
     },
     "hamburgerMenu": {
       "aboutOurSchoolTitle": "關於小老鷹學院",
@@ -125,9 +101,9 @@
   },
   "home": {
     "hero": {
-      "label1": "幼稚園課程",
-      "label2": "最佳兒童教育",
-      "admissionButton": "2022-2023年度招生"
+      "label1": "拓展課程",
+      "label2": "兒童學術樂園",
+      "admissionButton": "現在招生"
     },
     "class": {
       "title": "我們的班級",
@@ -166,11 +142,11 @@
     },
     "banner": {
       "title": "加入我們的新學期",
-      "description": "Kindedo相信好問題帶來好答案。無論是關於我們周圍世界的問題還是挑戰。",
+      "description": "雛鷹學院相信好問題帶來好答案。無論是關於我們周圍世界的問題還是挑戰。",
       "applyNowButton": "立即申請"
     },
     "teacher": {
-      "title": "我們的優秀教師",
+      "title": "我們的教師",
       "description": "在老師和環境的幫助下，作為第三位老師，學生們有機會充滿信心地冒險。"
     }
   },

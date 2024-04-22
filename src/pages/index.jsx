@@ -19,9 +19,9 @@ export default function Home() {
       <Header />
       <HomeHero />
       <HomeClass />
-      <HomePromotion />
+      {/* <HomePromotion /> */}
       {/* <HomeProgram/> */}
-      <HomeAbout />
+      {/* <HomeAbout /> */}
       <HomeBanner />
       <HomeTeacher />
       {/* <HomeTestimonial/> */}

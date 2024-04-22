@@ -87,15 +87,16 @@ const HomeClass = () => {
                       <SwiperSlide key={index}>
                         <div className="bd-class-wrapper text-center">
                           <div className="bd-class-bg">
-                            <Image
-                              src={item.shape}
+                            {/* <Image
+                              src={shape1}
                               style={{ width: "100%", height: "100%" }}
                               alt="img not found"
-                            />
+                            /> */}
                           </div>
                           <div className="bd-class">
                             <div className="bd-class-icon">
-                              <i className={item.icon}></i>
+                              {/* <i className={item.icon}></i> */}
+                              <ClazzIcon clazz={clazz} />
                             </div>
                             <div className="bd-class-content">
                               <h3 className="bd-class-title">
@@ -137,6 +138,27 @@ const HomeClass = () => {
       </div>
     </section>
   );
+};
+
+const ClazzIcon = ({ clazz }) => {
+  if (clazz.iconName) {
+    return <i className={clazz.iconName}></i>;
+  } else {
+    console.log(clazz.imageUrls);
+    return (
+      <Image
+        src={clazz.imageUrls[0]}
+        height={50}
+        width={50}
+        style={{
+          alignSelf: "center",
+          borderRadius: 100,
+          height: "95%",
+          width: "95%",
+        }}
+      />
+    );
+  }
 };
 
 export default HomeClass;

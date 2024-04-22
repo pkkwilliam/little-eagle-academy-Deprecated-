@@ -33,7 +33,7 @@
       "title": "就在这里联系我们"
     },
     "footer": {
-      "teaser": "在我们的成人参与计划中，对大多数学生而言，这是他们在Kindedo的第一个计划。",
+      "teaser": "雏鹰学院",
       "socialTitle": "社交",
       "newsTitle": "订阅我们的通讯",
       "newsBtn": "立即订阅",
@@ -48,36 +48,12 @@
             "path": "/classes"
           },
           {
-            "menu": "新闻",
-            "path": "/news"
-          },
-          {
-            "menu": "关于",
-            "path": "/about"
-          },
-          {
             "menu": "联系",
             "path": "/contact"
           }
         ]
       },
-      "social_icons": [
-        {
-          "icon": "fa-brands fa-facebook-f",
-          "url": "https://www.facebook.com/",
-          "name": "Facebook"
-        },
-        {
-          "icon": "fa-brands fa-twitter",
-          "url": "https://twitter.com/",
-          "name": "Twitter"
-        },
-        {
-          "icon": "fa-brands fa-youtube",
-          "url": "https://www.youtube.com/",
-          "name": "Youtube"
-        }
-      ]
+      "social_icons": []
     },
     "hamburgerMenu": {
       "aboutOurSchoolTitle": "关于小老鹰学院",
@@ -125,9 +101,9 @@
   },
   "home": {
     "hero": {
-      "label1": "幼儿园课程",
-      "label2": "最佳儿童教育",
-      "admissionButton": "2022-2023年度招生"
+      "label1": "拓展课程",
+      "label2": "儿童学术乐园",
+      "admissionButton": "現在招生"
     },
     "class": {
       "title": "我们的班级",
@@ -166,11 +142,11 @@
     },
     "banner": {
       "title": "加入我们的新学期",
-      "description": "Kindedo相信好问题带来好答案。无论是关于我们周围世界的问题还是挑战。",
+      "description": "雏鹰学院相信好问题带来好答案。无论是关于我们周围世界的问题还是挑战。",
       "applyNowButton": "立即申请"
     },
     "teacher": {
-      "title": "我们的优秀教师",
+      "title": "我们的教师",
       "description": "在老师和环境的帮助下，作为第三位老师，学生们有机会充满信心地冒险。"
     }
   },
