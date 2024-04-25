@@ -45,7 +45,7 @@ const PersonlInfoContent = ({ personalInfo }) => {
   return (personalInfo ?? []).map((info) => {
     const { key, value } = info;
     return (
-      <div className="bd-teacher-widget-info">
+      <div className="bd-teacher-widget-info" key={key}>
         <p>{`${key}:`}</p>
         <p dangerouslySetInnerHTML={{ __html: value }} />
       </div>
