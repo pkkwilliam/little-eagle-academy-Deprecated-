@@ -82,8 +82,8 @@ const TeacherDetailsArea = ({ instructor }) => {
                 </div>
               </div>
             </div>
-            <TeacherSkills />
-            <TeacherInfo />
+            {/* <TeacherSkills /> */}
+            <TeacherInfo localizedInstructor={localizedInstructor} />
           </div>
         </div>
       </section>

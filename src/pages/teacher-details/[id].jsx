@@ -34,7 +34,7 @@ export default function TeacherDetails() {
       <SEO pageTitle={"Teacher Details"} />
       <HeaderFour />
       <TeacherDetailsArea instructor={instructor} />
-      <TeacherTimeTable />
+      {/* <TeacherTimeTable /> */}
       <HomeNewsletter />
       <Footer />
     </Wrapper>

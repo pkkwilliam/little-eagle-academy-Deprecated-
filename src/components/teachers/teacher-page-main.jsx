@@ -36,7 +36,11 @@ const TeacherPageMain = () => {
                   <Link href={`/teacher-details/${item.name}`}>
                     <div className="bd-teacher-thumb">
                       <Image
-                        src={img_1}
+                        src={
+                          item.imageUrls?.length > 0 ? item.imageUrls[0] : img_1
+                        }
+                        height={1}
+                        width={1}
                         style={{ width: "100%", height: "100%" }}
                         alt="img not found"
                       />
