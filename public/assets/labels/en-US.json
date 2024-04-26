@@ -58,7 +58,7 @@
     },
     "hamburgerMenu": {
       "aboutOurSchoolTitle": "About Little Eagle Academy",
-      "aboutSummary": "With the help of teachers and environment as the third teacher, students have opportunities to confidently take risks.",
+      "aboutSummary": "There's nothing more fulfilling than seeing young minds flourish and evolve into future leaders. At Little Eagle Academy, we foster an environment where every child feels valued and empowered to reach their full potential.",
       "contactInfo": "Contact Info"
     },
     "menu": {
@@ -108,7 +108,7 @@
     },
     "class": {
       "title": "Our Class",
-      "description": "Our small-sized classes cater to the age group of 2-13 years<br/> with a curriculum focussing children."
+      "description": "Our small-sized classes cater to the age group of 2-14 years<br/> with a curriculum focussing children."
     },
     "promotion": {
       "title": "Best for Your Kids",
@@ -148,7 +148,7 @@
     },
     "teacher": {
       "title": "Our Teachers",
-      "description": "With the help of teachers and the environment as the third teacher, students<br /> have opportunities to confidently take risks."
+      "description": ""
     }
   },
   "page": {

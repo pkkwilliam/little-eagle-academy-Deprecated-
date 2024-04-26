@@ -56,8 +56,8 @@
       "social_icons": []
     },
     "hamburgerMenu": {
-      "aboutOurSchoolTitle": "关于小老鹰学院",
-      "aboutSummary": "在老师和环境的帮助下，作为第三位老师，学生有机会充满信心地冒险。",
+      "aboutOurSchoolTitle": "关于雏鹰学院",
+      "aboutSummary": "看到年轻的心灵茁壮成长，并演变成未来的领袖，再没有比这更令人满足的了。在雏鹰学院，我们营造一个让每个孩子都感到被重视并被赋予力量，实现他们的全部潜能的环境。",
       "contactInfo": "联系信息"
     },
     "menu": {
@@ -107,7 +107,7 @@
     },
     "class": {
       "title": "我们的班级",
-      "description": "我们的多层次幼儿园课程适用于2-5岁的孩子，课程侧重于儿童。"
+      "description": "我们的多层次幼儿园课程适用于2-14岁的孩子，课程侧重于儿童。"
     },
     "promotion": {
       "title": "最适合您的孩子",
@@ -147,7 +147,7 @@
     },
     "teacher": {
       "title": "我们的教师",
-      "description": "在老师和环境的帮助下，作为第三位老师，学生们有机会充满信心地冒险。"
+      "description": ""
     }
   },
   "page": {

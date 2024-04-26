@@ -56,8 +56,8 @@
       "social_icons": []
     },
     "hamburgerMenu": {
-      "aboutOurSchoolTitle": "關於小老鷹學院",
-      "aboutSummary": "在老師和環境的幫助下，作為第三位老師，學生有機會充滿信心地冒險。",
+      "aboutOurSchoolTitle": "關於雛鷹學院",
+      "aboutSummary": "看到年輕的心靈茁壯成長，並演變成未來的領袖，再沒有比這更令人滿足的了。在雛鷹學院，我們培養一個讓每個孩子都感到被重視並被賦予力量，實現他們的全部潛能的環境。",
       "contactInfo": "聯繫資訊"
     },
     "menu": {
@@ -107,7 +107,7 @@
     },
     "class": {
       "title": "我們的班級",
-      "description": "我們的多層次幼稚園課程適用於2-5歲的孩子，課程側重於兒童。"
+      "description": "我們的多層次幼稚園課程適用於2-14歲的孩子，課程側重於兒童。"
     },
     "promotion": {
       "title": "最適合您的孩子",
@@ -147,7 +147,7 @@
     },
     "teacher": {
       "title": "我們的教師",
-      "description": "在老師和環境的幫助下，作為第三位老師，學生們有機會充滿信心地冒險。"
+      "description": ""
     }
   },
   "page": {
