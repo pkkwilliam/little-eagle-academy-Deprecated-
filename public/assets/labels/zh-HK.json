@@ -35,7 +35,7 @@
       "sendUsAnotherMessage": "再發送一則訊息給我們。"
     },
     "contactFormMain": {
-      "title": "就在這裡聯繫我們"
+      "title": "請在這裡聯繫我們"
     },
     "footer": {
       "teaser": "雛鷹學院",
@@ -87,6 +87,9 @@
       "label2": "勇敢並不總是一個偉大的姿態，有時它只是意味著嘗試那個困難的問題，在課堂上提供答案，當你只是真的在嘗試新的時候。",
       "key1": "每晚清潔",
       "key2": "洗手"
+    },
+    "teacherDetailsArea": {
+      "aboutMe": "關於我"
     }
   },
   "enum": {

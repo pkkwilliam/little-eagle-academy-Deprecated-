@@ -88,6 +88,9 @@
       "label2": "Being brave isn’t always a grand gesture sometimes it just means having a go attempting that difficult question, offering an answer in a lesson when you’re simply really trying new.",
       "key1": "Nightly cleaning",
       "key2": "Hand Washing"
+    },
+    "teacherDetailsArea": {
+      "aboutMe": "About Me"
     }
   },
   "enum": {

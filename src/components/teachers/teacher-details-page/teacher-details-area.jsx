@@ -10,9 +10,11 @@ import { getInstructors } from "src/middleware/apiDataService";
 import { store } from "src/redux/store";
 
 const TeacherDetailsArea = ({ instructor }) => {
-  const { selectedLanguage } = useSelector((state) => state.language);
+  const { languageLabel, selectedLanguage } = useSelector(
+    (state) => state.language
+  );
   const localizedInstructor = instructor?.localized?.[selectedLanguage] ?? {};
-
+  const labels = languageLabel?.component?.teacherDetailsArea ?? {};
   return (
     <>
       <Breadcrumb title="Teacher Details" subTitle="Teacher Details" />
@@ -35,7 +37,10 @@ const TeacherDetailsArea = ({ instructor }) => {
                       }
                       height={1}
                       width={1}
-                      // style={{ width: "100%", height: "100%" }}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
                       alt="img not found"
                     />
                   }
@@ -44,50 +49,54 @@ const TeacherDetailsArea = ({ instructor }) => {
               </div>
             </div>
             <div className="col-lg-6 mb-50">
-              <div
-                className="bd-teacher-widget theme-bg-6 wow fadeInRight"
-                data-wow-duration="1s"
-                data-wow-delay=".3s"
-              >
-                <div className="bd-teacher-widget-content">
-                  <h3 className="bd-teacher-widget-title">
-                    {localizedInstructor.name}
-                  </h3>
-                  <span className="bd-teacher-widget-tag">
-                    {localizedInstructor.title}
-                  </span>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: localizedInstructor.description,
-                    }}
-                  />
-                  {/* {item.social_links && (
-                    <div className="bd-teacher-widget-social">
-                      <span>Follow Me:</span>
-                      <ul>
-                        {item.social_links.map((social, i) => (
-                          <li key={i}>
-                            <a
-                              target={social.target}
-                              href={social.link}
-                              rel="noreferrer"
-                            >
-                              <i className={social.icon}></i>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )} */}
-                </div>
-              </div>
+              <TeacherInfo localizedInstructor={localizedInstructor} />
             </div>
             {/* <TeacherSkills /> */}
-            <TeacherInfo localizedInstructor={localizedInstructor} />
+            <TeacherMessage
+              labels={labels}
+              localizedInstructor={localizedInstructor}
+            />
           </div>
         </div>
       </section>
     </>
+  );
+};
+
+const TeacherMessage = ({ labels, localizedInstructor }) => {
+  return (
+    <div
+      className="bd-teacher-widget theme-bg-6 wow fadeInRight"
+      data-wow-duration="1s"
+      data-wow-delay=".3s"
+    >
+      <div className="bd-teacher-widget-content">
+        <h4>{labels.aboutMe}</h4>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: localizedInstructor.description,
+          }}
+        />
+        {/* {item.social_links && (
+      <div className="bd-teacher-widget-social">
+        <span>Follow Me:</span>
+        <ul>
+          {item.social_links.map((social, i) => (
+            <li key={i}>
+              <a
+                target={social.target}
+                href={social.link}
+                rel="noreferrer"
+              >
+                <i className={social.icon}></i>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )} */}
+      </div>
+    </div>
   );
 };
 

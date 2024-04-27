@@ -11,7 +11,13 @@ const TeacherInfo = ({ localizedInstructor }) => {
         data-wow-delay=".3s"
       >
         <div className="bd-teacher-widget-content">
-          <h4 className="bd-teacher-widget-title-2 mb-15">Personal Info :</h4>
+          {/* <h4 className="bd-teacher-widget-title-2 mb-15">Personal Info :</h4> */}
+          <h3 className="bd-teacher-widget-title">
+            {localizedInstructor.name}
+          </h3>
+          <span className="bd-teacher-widget-tag">
+            {localizedInstructor.title}
+          </span>
           <div className="bd-teacher-widget-info-wrap">
             <PersonlInfoContent personalInfo={personalInfo} />
             {/* <div className="bd-teacher-widget-info">
@@ -45,8 +51,12 @@ const PersonlInfoContent = ({ personalInfo }) => {
   return (personalInfo ?? []).map((info) => {
     const { key, value } = info;
     return (
-      <div className="bd-teacher-widget-info" key={key}>
-        <p>{`${key}:`}</p>
+      <div
+        className="bd-teacher-widget-info"
+        key={key}
+        style={{ display: "flex", alignItems: "start" }}
+      >
+        <p style={{ fontSize: 20, fontWeight: 600 }}>{`${key}:`}</p>
         <p dangerouslySetInnerHTML={{ __html: value }} />
       </div>
     );
