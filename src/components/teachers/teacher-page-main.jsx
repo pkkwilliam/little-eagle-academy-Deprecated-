@@ -6,10 +6,16 @@ import { useSelector } from "react-redux";
 import { getInstructors } from "src/middleware/apiDataService";
 import { store } from "src/redux/store";
 import img_1 from "@assets/img/teacher/1.jpg";
+import { useRouter } from "next/router";
 
 const TeacherPageMain = () => {
   const [instructors, setInstructors] = useState([]);
-  const { selectedLanguage } = useSelector((state) => state.language);
+  const { languageLabel, selectedLanguage } = useSelector(
+    (state) => state.language
+  );
+  const router = useRouter();
+
+  const labels = languageLabel?.component?.teacherPageMain ?? {};
 
   useEffect(() => {
     fetchInstructors();
@@ -70,7 +76,13 @@ const TeacherPageMain = () => {
                             </a>
                           </li>
                         ))} */}
-                        <li>View Detail</li>
+                        <li
+                          onClick={() => {
+                            router.push(`/teacher-details/${item.name}`);
+                          }}
+                        >
+                          {labels.viewDetail}
+                        </li>
                       </ul>
                     </div>
                   </div>

@@ -48,16 +48,32 @@ const TeacherInfo = ({ localizedInstructor }) => {
 };
 
 const PersonlInfoContent = ({ personalInfo }) => {
-  return (personalInfo ?? []).map((info) => {
+  return (personalInfo ?? []).map((info, index) => {
+    const isFirstRow = index === 0;
     const { key, value } = info;
+    const subValues = value.split("||");
     return (
       <div
         className="bd-teacher-widget-info"
         key={key}
-        style={{ display: "flex", alignItems: "start" }}
+        style={{
+          display: "flex",
+          alignItems: "start",
+          paddingTop: isFirstRow ? 0 : 16,
+        }}
       >
         <p style={{ fontSize: 20, fontWeight: 600 }}>{`${key}:`}</p>
-        <p dangerouslySetInnerHTML={{ __html: value }} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "end",
+          }}
+        >
+          {subValues.map((v) => (
+            <p dangerouslySetInnerHTML={{ __html: v }} style={{ margin: 0 }} />
+          ))}
+        </div>
       </div>
     );
   });

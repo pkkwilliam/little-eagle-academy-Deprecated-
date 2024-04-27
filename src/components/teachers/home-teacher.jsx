@@ -9,6 +9,8 @@ import { useSelector } from "react-redux";
 import { getInstructors } from "src/middleware/apiDataService";
 import { store } from "src/redux/store";
 import img_1 from "@assets/img/teacher/1.jpg";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 
 const HomeTeacher = () => {
   const [instructors, setInstructors] = useState([]);
@@ -16,6 +18,7 @@ const HomeTeacher = () => {
     (state) => state.language
   );
   const labels = languageLabel?.home?.teacher ?? {};
+  const router = useRouter();
 
   useEffect(() => {
     fetchInstructors();
@@ -24,6 +27,7 @@ const HomeTeacher = () => {
   const fetchInstructors = async () => {
     const instructrosResult = await getInstructors(store);
     setInstructors(instructrosResult);
+    redirect;
   };
 
   return (
@@ -132,7 +136,15 @@ const HomeTeacher = () => {
                                   </li>
                                 ))}
                               </ul> */}
-                              View Detail
+                              <li
+                                onClick={() => {
+                                  router.push(
+                                    `/teacher-details/${instructor.name}`
+                                  );
+                                }}
+                              >
+                                {labels.viewDetail}
+                              </li>
                             </div>
                           </div>
                         </div>

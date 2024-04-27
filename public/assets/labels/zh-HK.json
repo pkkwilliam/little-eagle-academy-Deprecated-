@@ -90,6 +90,9 @@
     },
     "teacherDetailsArea": {
       "aboutMe": "關於我"
+    },
+    "teacherPageMain": {
+      "viewDetail": "查看詳細"
     }
   },
   "enum": {
@@ -155,7 +158,8 @@
     },
     "teacher": {
       "title": "我們的教師",
-      "description": ""
+      "description": "",
+      "viewDetail": "查看詳細"
     }
   },
   "page": {

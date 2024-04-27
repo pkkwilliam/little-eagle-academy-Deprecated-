@@ -91,6 +91,9 @@
     },
     "teacherDetailsArea": {
       "aboutMe": "About Me"
+    },
+    "teacherPageMain": {
+      "viewDetail": "View Detail"
     }
   },
   "enum": {
@@ -156,7 +159,8 @@
     },
     "teacher": {
       "title": "Our Teachers",
-      "description": ""
+      "description": "",
+      "viewDetail": "View Detail"
     }
   },
   "page": {
