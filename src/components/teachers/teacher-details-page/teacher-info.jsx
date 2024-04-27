@@ -70,8 +70,12 @@ const PersonlInfoContent = ({ personalInfo }) => {
             alignItems: "end",
           }}
         >
-          {subValues.map((v) => (
-            <p dangerouslySetInnerHTML={{ __html: v }} style={{ margin: 0 }} />
+          {subValues.map((v, index) => (
+            <p
+              key={"sub_v" + index}
+              dangerouslySetInnerHTML={{ __html: v }}
+              style={{ margin: 0 }}
+            />
           ))}
         </div>
       </div>
