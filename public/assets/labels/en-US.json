@@ -16,7 +16,12 @@
     "classDetailsArea": {
       "classTeach": "Instructor",
       "category": "Category",
-      "pricePerUnit": "Per"
+      "pricePerUnit": "Per",
+      "trial": "Free Trial"
+    },
+    "classPageMain": {
+      "trialAvailable": "Free Trial",
+      "viewDetail": "View Detail"
     },
     "contactForm": {
       "enterYourNamePlaceHolder": "Enter your name",

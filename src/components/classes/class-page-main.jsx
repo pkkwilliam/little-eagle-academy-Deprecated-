@@ -7,6 +7,8 @@ import { getClasses } from "src/middleware/apiDataService";
 import { store } from "src/redux/store";
 import img_1 from "@assets/img/class/6.jpg";
 import author_1 from "@assets/img/teacher/small-1.png";
+import { TRIAL_TYPE_FREE } from "src/enum/TrialType";
+import SmallPrimaryButton from "@components/common/SmallPrimaryButton";
 
 const ClassPageMain = () => {
   const { languageLabel, selectedLanguage } = useSelector(
@@ -14,6 +16,7 @@ const ClassPageMain = () => {
   );
   const [classes, setClasses] = useState([]);
 
+  const labels = languageLabel?.component?.classPageMain ?? {};
   const enumLabels = languageLabel?.enum ?? { priceUnit: {} };
 
   const fetchClasses = async () => {
@@ -80,17 +83,29 @@ const ClassPageMain = () => {
                           </Link>
                         </span>
                       </div>
-                      <div className="bd-class-meta">
+                      <div
+                        className="bd-class-meta"
+                        style={{
+                          alignItems: "end",
+                          display: "flex",
+                          flexDirection: "column",
+
+                          gap: 0,
+                        }}
+                      >
                         <div className="bd-class-meta-price">
                           <span>${item.price}/</span>
                           {enumLabels.priceUnit[item.priceUnit]}
                         </div>
+                        {item.trialType === TRIAL_TYPE_FREE.code ? (
+                          <TrialButton clazz={item} labels={labels} />
+                        ) : null}
                       </div>
                     </div>
                   </div>
                   <div className="bd-class-btn-3 theme-bg-2 text-center">
                     <Link href={`/class-details/${item.codeName}`}>
-                      View Detail
+                      {labels.viewDetail}
                     </Link>
                   </div>
                 </div>
@@ -101,6 +116,10 @@ const ClassPageMain = () => {
       </div>
     </section>
   );
+};
+
+const TrialButton = ({ clazz, labels }) => {
+  return <SmallPrimaryButton>{labels.trialAvailable}</SmallPrimaryButton>;
 };
 
 export default ClassPageMain;

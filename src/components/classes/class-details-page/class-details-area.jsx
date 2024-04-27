@@ -9,6 +9,7 @@ import class_img from "@assets/img/class/6.jpg";
 import author_img from "@assets/img/program/author-1.png";
 import Breadcrumb from "@components/common/breadcrumb/breadcrumb";
 import { useSelector } from "react-redux";
+import { TRIAL_TYPE_FREE } from "src/enum/TrialType";
 
 const ClassDetailsArea = ({ item }) => {
   const { languageLabel, selectedLanguage } = useSelector(
@@ -102,6 +103,9 @@ const ClassDetailsArea = ({ item }) => {
                     </span>
                     <h5>${item?.price}</h5>
                   </div>
+                  <div className="bd-class-details-cat">
+                    <EnrollButton clazz={clazz} labels={labels} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -117,6 +121,20 @@ const ClassDetailsArea = ({ item }) => {
 
       <ClassDetailsWidgetTwo /> */}
     </>
+  );
+};
+
+const EnrollButton = ({ clazz, labels }) => {
+  if (clazz.trialType !== TRIAL_TYPE_FREE.code) {
+    return null;
+  }
+  return (
+    <button type="submit" className="bd-btn">
+      <span className="bd-btn-inner">
+        <span className="bd-btn-normal">{labels.trial}</span>
+        <span className="bd-btn-hover">{labels.trial}</span>
+      </span>
+    </button>
   );
 };
 

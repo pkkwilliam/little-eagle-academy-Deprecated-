@@ -16,7 +16,12 @@
     "classDetailsArea": {
       "classTeach": "老师",
       "category": "类别",
-      "pricePerUnit": "每"
+      "pricePerUnit": "每",
+      "trial": "免费试听"
+    },
+    "classPageMain": {
+      "trialAvailable": "免费试听",
+      "viewDetail": "查看详细"
     },
     "contactForm": {
       "enterYourNamePlaceHolder": "输入您的姓名",
@@ -30,7 +35,7 @@
       "sendUsAnotherMessage": "再发送一则消息给我们。"
     },
     "contactFormMain": {
-      "title": "就在这里联系我们"
+      "title": "请在这里联系我们"
     },
     "footer": {
       "teaser": "雏鹰学院",
@@ -48,7 +53,7 @@
             "path": "/classes"
           },
           {
-            "menu": "联系",
+            "menu": "联系我们",
             "path": "/contact"
           }
         ]
@@ -65,7 +70,7 @@
       "aboutUs": "关于我们",
       "classes": "课程",
       "newsAndEvents": "新闻与活动",
-      "contact": "联系"
+      "contact": "联系我们"
     },
     "newsLetter": {
       "title": "加入我们的电子报",
@@ -156,6 +161,6 @@
     "classes": "课程",
     "classDetail": "课程详情",
     "newsAndEvents": "新闻与活动",
-    "contact": "联系"
+    "contact": "联系我们"
   }
 }

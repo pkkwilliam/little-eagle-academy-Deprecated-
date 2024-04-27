@@ -65,7 +65,7 @@ const HomeHero = () => {
                   data-wow-duration="1s"
                   data-wow-delay=".7s"
                 >
-                  <Link href="/programs" className="bd-btn">
+                  <Link href="/classes" className="bd-btn">
                     <span className="bd-btn-inner">
                       <span className="bd-btn-normal">
                         {labels.admissionButton}
