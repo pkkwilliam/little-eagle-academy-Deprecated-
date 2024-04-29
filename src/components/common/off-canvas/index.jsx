@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@assets/img/logo/logo.png";
+import logo from "@assets/img/logo/logo_combine.png";
 import MobileMenus from "./mobile-menus";
 import { useSelector } from "react-redux";
 
@@ -27,7 +27,7 @@ const OffCanvasMain = ({ isOffCanvasOpen, setIsOffCanvasOpen }) => {
                 <Link href="/">
                   <Image
                     src={logo}
-                    style={{ width: "18%", height: "18%" }}
+                    style={{ width: "28%", height: "28%" }}
                     alt="img not found"
                   />
                 </Link>

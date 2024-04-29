@@ -32,8 +32,8 @@ const Header = () => {
                       <Image
                         src={logo}
                         style={{
-                          width: "38%",
-                          height: "38%",
+                          width: "138%",
+                          height: "138%",
                           margin: 6,
                         }}
                         alt="img not found"

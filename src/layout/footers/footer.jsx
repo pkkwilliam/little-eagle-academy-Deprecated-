@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CopyrightText from "./component/copyright-text";
-import logo from "@assets/img/logo/logo.png";
+import logo from "@assets/img/logo/logo_combine.png";
 import { useSelector } from "react-redux";
 // internal
 
@@ -27,7 +27,7 @@ const Footer = () => {
                     <div className="bd-footer-logo mb-35">
                       <Link href="/">
                         <Image
-                          style={{ width: "28%", height: "28%" }}
+                          style={{ width: "68%", height: "68%" }}
                           src={logo}
                           alt="logo"
                         />
