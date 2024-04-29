@@ -15,6 +15,12 @@ const TeacherDetailsArea = ({ instructor }) => {
   );
   const localizedInstructor = instructor?.localized?.[selectedLanguage] ?? {};
   const labels = languageLabel?.component?.teacherDetailsArea ?? {};
+  // Should add a teacherIcon in backend instead
+  const image = instructor?.imageUrls?.[1]
+    ? instructor.imageUrls[1]
+    : instructor?.imageUrls?.[0]
+    ? instructor.imageUrls[0]
+    : img_2;
   return (
     <>
       <Breadcrumb title="Teacher Details" subTitle="Teacher Details" />
@@ -30,11 +36,7 @@ const TeacherDetailsArea = ({ instructor }) => {
                 <div className="bd-teacher-widget-thumb p-relative">
                   {
                     <Image
-                      src={
-                        instructor?.imageUrls?.[0]
-                          ? instructor.imageUrls[0]
-                          : img_2
-                      }
+                      src={image}
                       height={1}
                       width={1}
                       style={{
