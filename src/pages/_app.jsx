@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
       () => {
         setIsLoading(false);
       },
-      isDev ? 0 : 3000
+      isDev ? 0 : 2000
     ); // Set the desired delay in milliseconds
 
     return () => clearTimeout(loadingTimeout);
