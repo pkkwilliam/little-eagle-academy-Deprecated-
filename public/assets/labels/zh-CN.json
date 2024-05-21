@@ -103,7 +103,8 @@
       "TWICE_PER_MONTH": "每月两次"
     },
     "priceUnit": {
-      "CLASS": "课程"
+      "CLASS": "课程",
+      "SESSION": "session"
     },
     "trialType": {
       "FREE": "免费",

@@ -103,12 +103,16 @@
       "TWICE_PER_MONTH": "每月兩次"
     },
     "priceUnit": {
-      "CLASS": "課程"
+      "CLASS": "課程",
+      "SESSION": "學期"
     },
     "trialType": {
       "FREE": "免費",
       "NA": "無"
     }
+  },
+  "error": {
+    "403.001": "課程超出人數限制，請稍後再查看。"
   },
   "home": {
     "hero": {
@@ -153,7 +157,7 @@
     },
     "banner": {
       "title": "加入我們的新學期",
-      "description": "雛鷹學院相信好問題帶來好答案。無論是關於我們周圍世界的問題還是挑戰。",
+      "description": "雛鷹學院相信好問題帶來好答案。<br/>無論是關於我們周圍世界的問題還是挑戰。",
       "applyNowButton": "立即申請"
     },
     "teacher": {

@@ -104,12 +104,16 @@
       "TWICE_PER_MONTH": "Twice per Month"
     },
     "priceUnit": {
-      "CLASS": "class"
+      "CLASS": "class",
+      "SESSION": "session"
     },
     "trialType": {
       "FREE": "Free",
       "NA": "N/A"
     }
+  },
+  "error": {
+    "403.001": "Course/s exceed optimum capacity. Please check back later."
   },
   "home": {
     "hero": {

@@ -1,15 +1,19 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ClassCat from "./class-cat";
 import ClassDetailsWidget from "./class-details-widget";
 import ClassTimeTable from "./class-time-table";
 import ClassDetailsWidgetTwo from "./class-details-widget-two";
-import Image from "next/image";
 import class_img from "@assets/img/class/6.jpg";
 import author_img from "@assets/img/program/author-1.png";
 import Breadcrumb from "@components/common/breadcrumb/breadcrumb";
 import { useSelector } from "react-redux";
 import { TRIAL_TYPE_FREE } from "src/enum/TrialType";
+import { Button, Form, Image, Modal } from "react-bootstrap";
+import ClassRegistrationModal from "./class-registration-modal";
+import { ENROLL_TYPE_STANDARD, ENROLL_TYPE_TRIAL } from "src/enum/enrollType";
+import ClassTrialBanner from "./class-trial-banner";
+import PrimaryButton from "@components/common/primary-button";
 
 const ClassDetailsArea = ({ item }) => {
   const { languageLabel, selectedLanguage } = useSelector(
@@ -19,6 +23,7 @@ const ClassDetailsArea = ({ item }) => {
   const enumLabels = languageLabel?.enum ?? {};
   const labels = languageLabel?.component?.classDetailsArea ?? {};
   const clazz = item;
+  const courses = clazz?.courses ?? [];
   const clazzLocalization = item?.localized?.[selectedLanguage] ?? {};
   const instructor = item?.instructor ?? {};
   const localizedInstructor = instructor?.localized?.[selectedLanguage] ?? {};
@@ -49,25 +54,65 @@ const ClassDetailsArea = ({ item }) => {
             </div>
             <div className="col-xl-6 col-lg-12 mb-50">
               <div
-                className="bd-class-details-widget-content theme-bg-6 wow fadeInRight"
-                data-wow-duration="1s"
-                data-wow-delay=".3s"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
               >
-                <h3
-                  className="bd-class-details-widget-title mb-20"
-                  dangerouslySetInnerHTML={{ __html: clazzLocalization.name }}
-                />
-                <p
-                  className="mb-25"
-                  dangerouslySetInnerHTML={{
-                    __html: clazzLocalization.description,
-                  }}
-                />
                 <div
-                  className="bd-class-details-author-wrapper mt-35"
-                  style={{ display: "flex" }}
+                  className="bd-class-details-widget-content theme-bg-6 wow fadeInRight"
+                  data-wow-duration="1s"
+                  data-wow-delay=".3s"
                 >
-                  <div className="bd-class-details-author">
+                  <h3
+                    className="bd-class-details-widget-title mb-20"
+                    dangerouslySetInnerHTML={{ __html: clazzLocalization.name }}
+                  />
+                  <p
+                    className="mb-25"
+                    dangerouslySetInnerHTML={{
+                      __html: clazzLocalization.description,
+                    }}
+                  />
+                </div>
+                <div
+                  className="bd-class-details-widget-content theme-bg-6 wow fadeInRight"
+                  data-wow-duration="1s"
+                  data-wow-delay
+                  style={{ marginTop: 15 }}
+                >
+                  <div>
+                    <div>
+                      {courses.map((course) => {
+                        const dateConcatedString = course.scheduledDates.reduce(
+                          (acc, cur) => acc + cur + ", ",
+                          ""
+                        );
+                        console.log(dateConcatedString);
+                        const dateString =
+                          dateConcatedString && dateConcatedString.length > 2
+                            ? dateConcatedString.substring(
+                                0,
+                                dateConcatedString.length - 2
+                              )
+                            : "";
+                        return (
+                          <div>
+                            <h6>{course.name}</h6>
+                            <span>{dateString}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div
+                      className="bd-class-details-author-wrapper mt-35"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-around",
+                      }}
+                    >
+                      {/* <div className="bd-class-details-author">
                     <div className="bd-class-details-author-thumb">
                       <Image
                         src={
@@ -89,12 +134,12 @@ const ClassDetailsArea = ({ item }) => {
                         </Link>
                       </h5>
                     </div>
-                  </div>
-                  {/* <div className="bd-class-details-cat">
+                  </div> */}
+                      {/* <div className="bd-class-details-cat">
                     <span>{labels.category}</span>
                     <h5>Kindergarten</h5>
                   </div> */}
-                  <div className="bd-class-details-cat">
+                      {/* <div className="bd-class-details-cat">
                     <span>
                       $
                       {`${labels.pricePerUnit}/${
@@ -104,7 +149,59 @@ const ClassDetailsArea = ({ item }) => {
                     <h5>${item?.price}</h5>
                   </div>
                   <div className="bd-class-details-cat">
-                    <EnrollButton clazz={clazz} labels={labels} />
+                    {clazz.courses?.length > 0 ? (
+                      <ClassRegistrationModal
+                        clazz={clazz}
+                        clazzLocalization={clazzLocalization}
+                        labels={labels}
+                        enrollType={ENROLL_TYPE_STANDARD}
+                      >
+                        <button type="submit" className="bd-btn">
+                          <span className="bd-btn-inner">
+                            <span className="bd-btn-normal">Enroll</span>
+                            <span className="bd-btn-hover">Enroll</span>
+                          </span>
+                        </button>
+                      </ClassRegistrationModal>
+                    ) : null}
+                  </div> */}
+                      <div>
+                        <span>
+                          {`${labels.pricePerUnit}/${
+                            enumLabels?.priceUnit?.[clazz.priceUnit]
+                          }`}
+                        </span>
+                        <h4>${item?.price}</h4>
+                      </div>
+                      <div>
+                        {clazz.courses?.length > 0 ? (
+                          <ClassRegistrationModal
+                            clazz={clazz}
+                            clazzLocalization={clazzLocalization}
+                            labels={labels}
+                            enrollType={ENROLL_TYPE_STANDARD}
+                          >
+                            <button type="submit" className="bd-btn">
+                              <span className="bd-btn-inner">
+                                <span className="bd-btn-normal">Enroll</span>
+                                <span className="bd-btn-hover">Enroll</span>
+                              </span>
+                            </button>
+                          </ClassRegistrationModal>
+                        ) : (
+                          <Link href={"/contact"}>
+                            <button type="submit" className="bd-btn">
+                              <span className="bd-btn-inner">
+                                <span className="bd-btn-normal">
+                                  Contact Us
+                                </span>
+                                <span className="bd-btn-hover">Contact Us</span>
+                              </span>
+                            </button>
+                          </Link>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -112,29 +209,26 @@ const ClassDetailsArea = ({ item }) => {
           </div>
         </div>
       </section>
+      {clazz.trialAvailable && (
+        <section className="bd-class-details-widget pb-70">
+          <ClassRegistrationModal
+            clazz={clazz}
+            clazzLocalization={clazzLocalization}
+            labels={labels}
+            enrollType={ENROLL_TYPE_TRIAL}
+          >
+            <ClassTrialBanner>
+              <PrimaryButton>{labels.trial}</PrimaryButton>
+            </ClassTrialBanner>
+          </ClassRegistrationModal>
+        </section>
+      )}
 
       <ClassCat item={item} />
 
       <ClassDetailsWidget clazz={clazz} clazzLocalization={clazzLocalization} />
-
-      {/* <ClassTimeTable />
-
-      <ClassDetailsWidgetTwo /> */}
+      {/* <ClassDetailsWidgetTwo /> */}
     </>
-  );
-};
-
-const EnrollButton = ({ clazz, labels }) => {
-  if (clazz.trialType !== TRIAL_TYPE_FREE.code) {
-    return null;
-  }
-  return (
-    <button type="submit" className="bd-btn">
-      <span className="bd-btn-inner">
-        <span className="bd-btn-normal">{labels.trial}</span>
-        <span className="bd-btn-hover">{labels.trial}</span>
-      </span>
-    </button>
   );
 };
 

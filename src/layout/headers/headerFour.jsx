@@ -9,6 +9,8 @@ import OffCanvasMain from "@components/common/off-canvas";
 import useSticky from "@hooks/use-sticky";
 import LanguageDropdownSelector from "@components/language/language-dropdown-selector";
 import { useSelector } from "react-redux";
+import CartSidebar from "@components/common/sidebar/cart-sidebar";
+import useCartInfo from "@hooks/use-cart-info";
 
 const HeaderFour = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -16,6 +18,7 @@ const HeaderFour = () => {
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false);
   const { languageLabel } = useSelector((state) => state.language);
   const labels = languageLabel ?? {};
+  const { quantity } = useCartInfo();
   return (
     <>
       <header>
@@ -72,6 +75,17 @@ const HeaderFour = () => {
                       </Link> */}
                     </div>
                     <LanguageDropdownSelector />
+                    <div className="bd-header-meta-item bd-header-menu-meta d-flex align-items-center">
+                      <div className="bd-header-meta-icon-3 bd-header-cart">
+                        <a href="#">
+                          <i className="fa-regular fa-cart-shopping"></i>
+                          <span className="bd-header-cart-count">
+                            {quantity}
+                          </span>
+                        </a>
+                        <CartSidebar />
+                      </div>
+                    </div>
                     <div className="header-hamburger">
                       <button
                         type="button"

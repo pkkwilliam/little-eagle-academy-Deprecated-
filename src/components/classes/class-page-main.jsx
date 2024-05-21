@@ -62,7 +62,7 @@ const ClassPageMain = () => {
                     <p className="mb-20">{clazz.teaser}</p>
                     <div className="bd-class-meta-wrapper d-flex justify-content-between align-items-center flex-wrap">
                       <div className="bd-class-meta d-flex align-items-center flex-wrap">
-                        <div className="bd-class-meta-thumb">
+                        {/* <div className="bd-class-meta-thumb">
                           <Link href={`/class-details/${item.codeName}`}>
                             <Image
                               src={
@@ -81,7 +81,7 @@ const ClassPageMain = () => {
                           <Link href={`/teacher-details/${instructor.name}`}>
                             {localizedInstructor.name}
                           </Link>
-                        </span>
+                        </span> */}
                       </div>
                       <div
                         className="bd-class-meta"
@@ -97,9 +97,9 @@ const ClassPageMain = () => {
                           <span>${item.price}/</span>
                           {enumLabels.priceUnit[item.priceUnit]}
                         </div>
-                        {item.trialType === TRIAL_TYPE_FREE.code ? (
+                        {item.trialAvailable && (
                           <TrialButton clazz={item} labels={labels} />
-                        ) : null}
+                        )}
                       </div>
                     </div>
                   </div>
