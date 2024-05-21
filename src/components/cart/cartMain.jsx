@@ -108,8 +108,11 @@ const CartMain = () => {
                               >
                                 {item.title}
                                 <div>
-                                  {item.subTitles.map((subTitle) => (
-                                    <h6 style={{ color: "grey", margin: 0 }}>
+                                  {item.subTitles.map((subTitle, index) => (
+                                    <h6
+                                      key={"st" + index}
+                                      style={{ color: "grey", margin: 0 }}
+                                    >
                                       {subTitle}
                                     </h6>
                                   ))}

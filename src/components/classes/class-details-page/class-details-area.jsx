@@ -83,7 +83,7 @@ const ClassDetailsArea = ({ item }) => {
                 >
                   <div>
                     <div>
-                      {courses.map((course) => {
+                      {courses.map((course, index) => {
                         const dateConcatedString = course.scheduledDates.reduce(
                           (acc, cur) => acc + cur + ", ",
                           ""
@@ -97,7 +97,7 @@ const ClassDetailsArea = ({ item }) => {
                               )
                             : "";
                         return (
-                          <div>
+                          <div key={"course" + index}>
                             <h6>{course.name}</h6>
                             <span>{dateString}</span>
                           </div>

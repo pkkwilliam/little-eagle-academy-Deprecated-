@@ -45,16 +45,15 @@ const ClassRegistrationModal = ({
   //     courseId: clazz.courses?.[0]?.id,
   //   }));
   // };
-  if (!clazz || !clazz.courses) {
-    return;
-  }
-
   useEffect(() => {
     setFormData({
       ...formData,
       courseId: toShowCourses[0].id,
     });
   }, [clazz, enrollType]);
+  if (!clazz || !clazz.courses) {
+    return;
+  }
 
   const handleFormDataChange = (e) => {
     const { name, value } = e.target;
@@ -147,7 +146,7 @@ const ClassRegistrationModal = ({
                   </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
-                  <Form.Label>Student's First Name</Form.Label>
+                  <Form.Label>Student&apos;s First Name</Form.Label>
                   <Form.Control
                     type="text"
                     value={formData.firstName}
@@ -160,7 +159,7 @@ const ClassRegistrationModal = ({
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicLastName">
-                  <Form.Label>Student's Last Name</Form.Label>
+                  <Form.Label>Student&apos;s Last Name</Form.Label>
                   <Form.Control
                     type="text"
                     value={formData.lastName}
@@ -173,7 +172,7 @@ const ClassRegistrationModal = ({
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDob">
-                  <Form.Label>Student's DOB (MM/DD/YYYY)</Form.Label>
+                  <Form.Label>Student&apos;s DOB (MM/DD/YYYY)</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter Date of Birth"
@@ -202,8 +201,10 @@ const ClassRegistrationModal = ({
               {/* <h4>Session Detail</h4> */}
               <h4>Scheduled Date</h4>
               <p>{`${selectedCourse?.startTime} - ${selectedCourse?.endTime}`}</p>
-              {(selectedCourse?.scheduledDates ?? []).map((date) => (
-                <p style={{ margin: 0 }}>{date}</p>
+              {(selectedCourse?.scheduledDates ?? []).map((date, index) => (
+                <p key={"schedule_date" + index} style={{ margin: 0 }}>
+                  {date}
+                </p>
               ))}
               <h4>Location</h4>
               <p>{selectedCourse?.location?.name}</p>
