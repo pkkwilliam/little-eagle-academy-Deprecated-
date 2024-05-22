@@ -53,7 +53,7 @@ const PaymentenrollsTable = ({ enrolls = [] }) => {
                   </div>
                 </td>
                 <td className="product-subtotal">
-                  <span className="amount">${item.clazz.price}</span>
+                  <span className="amount">${item.price}</span>
                 </td>
               </tr>
             );
