@@ -19,12 +19,15 @@ import PrimaryButton from "@components/common/primary-button";
 import CartCheckOut from "./cartCheckout";
 
 const CartMain = () => {
+  const { languageLabel } = useSelector((state) => state.language);
   const { cartProducts } = useSelector((state) => state.cart);
   const [email, setEmail] = useState();
   const dispatch = useDispatch();
   const { total } = useCartInfo();
 
   const router = useRouter();
+
+  const labels = languageLabel?.component?.cartMain ?? {};
 
   const handleChange = (e) => {};
 
@@ -59,7 +62,7 @@ const CartMain = () => {
       {cartProducts.length === 0 && (
         <div className="container">
           <div className="empty-text pt-100 pb-100 text-center">
-            <h3>Your cart is empty</h3>
+            <h3>{labels.cartEmpty}</h3>
           </div>
         </div>
       )}
@@ -72,12 +75,20 @@ const CartMain = () => {
                   <table className="table">
                     <thead>
                       <tr>
-                        <th className="product-thumbnail">Images</th>
-                        <th className="cart-product-name">Product</th>
+                        <th className="product-thumbnail">
+                          {labels.tableColumnImage}
+                        </th>
+                        <th className="cart-product-name">
+                          {labels.tableColumnProduct}
+                        </th>
                         {/* <th className="product-price">Unit Price</th> */}
                         {/* <th className="product-quantity">Quantity</th> */}
-                        <th className="product-subtotal">Price</th>
-                        <th className="product-remove">Remove</th>
+                        <th className="product-subtotal">
+                          {labels.tableColumnPrice}
+                        </th>
+                        <th className="product-remove">
+                          {labels.tableColumnRemove}
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -206,13 +217,14 @@ const CartMain = () => {
               }}
             >
               <div className="cart-page-total" style={{ flex: 1 }}>
-                <h2>Cart totals</h2>
+                <h2>{labels.cartTotal}</h2>
                 <ul className="mb-30">
                   <li>
-                    Subtotal <span>${parseFloat(total)}</span>
+                    {labels.subTotal} <span>${parseFloat(total)}</span>
                   </li>
                   <li>
-                    Total <span>${parseFloat(total)}</span>
+                    {labels.total}
+                    <span>${parseFloat(total)}</span>
                   </li>
                 </ul>
               </div>
@@ -225,7 +237,7 @@ const CartMain = () => {
                 }}
               >
                 <CartCheckOut cartProducts={cartProducts}>
-                  <PrimaryButton>Proceed to Checkout</PrimaryButton>
+                  <PrimaryButton>{labels.proceedToCheckout}</PrimaryButton>
                 </CartCheckOut>
               </div>
             </div>

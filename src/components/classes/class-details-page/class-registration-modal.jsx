@@ -1,7 +1,7 @@
 import { removeLineBreakTag } from "@utils/utils";
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ENROLL_TYPE_STANDARD, ENROLL_TYPE_TRIAL } from "src/enum/enrollType";
 import { cart_product } from "src/redux/features/cart-slice";
 
@@ -16,15 +16,16 @@ const ClassRegistrationModal = ({
   children,
   clazz,
   clazzLocalization,
-  labels,
   enrollType,
 }) => {
+  const { languageLabel } = useSelector((state) => state.language);
   const formRef = useRef(null);
   const [formData, setFormData] = useState(EMPTY_FORM_DATA);
   const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
 
+  const labels = languageLabel?.component?.classRegistrationModal ?? {};
   const isTrial = enrollType === ENROLL_TYPE_TRIAL;
   const toShowCourses = isTrial ? clazz.trialCourses : clazz.courses;
   const scheduleOptions = toShowCourses.map((course) => ({
@@ -106,7 +107,9 @@ const ClassRegistrationModal = ({
         show={show}
       >
         <Modal.Header closeButton>
-          <Modal.Title>{`${isTrial ? "Trial " : ""}Register`}</Modal.Title>
+          <Modal.Title>{`${isTrial ? `${labels.trial} ` : ""}${
+            labels.register
+          }`}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div
@@ -122,11 +125,10 @@ const ClassRegistrationModal = ({
               />
               <Form ref={formRef}>
                 <Form.Group className="mb-3" controlId="formBasicSchedule">
-                  <Form.Label>Session</Form.Label>
+                  <Form.Label>{labels.session}</Form.Label>
                   <Form.Select
                     name="courseId"
                     onChange={(option) => {
-                      console.log(option.target.value);
                       setFormData({
                         ...formData,
                         courseId: option.target.value,
@@ -146,7 +148,7 @@ const ClassRegistrationModal = ({
                   </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
-                  <Form.Label>Student&apos;s First Name</Form.Label>
+                  <Form.Label>{labels.formFirstName}</Form.Label>
                   <Form.Control
                     type="text"
                     value={formData.firstName}
@@ -159,7 +161,7 @@ const ClassRegistrationModal = ({
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicLastName">
-                  <Form.Label>Student&apos;s Last Name</Form.Label>
+                  <Form.Label>{labels.formLastName}</Form.Label>
                   <Form.Control
                     type="text"
                     value={formData.lastName}
@@ -172,7 +174,7 @@ const ClassRegistrationModal = ({
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDob">
-                  <Form.Label>Student&apos;s DOB (MM/DD/YYYY)</Form.Label>
+                  <Form.Label>{labels.formDateOfBirth}</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter Date of Birth"
@@ -184,29 +186,23 @@ const ClassRegistrationModal = ({
                     {/* We'll never share your email with anyone else. */}
                   </Form.Text>
                 </Form.Group>
-                {isTrial && (
-                  <h6>
-                    All trial classes are free. A reseration deposit of $5 will
-                    be return at the end of class.
-                  </h6>
-                )}
+                {isTrial && <h6>{labels.trialDisclaimer}</h6>}
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <Button variant="primary" onClick={handleOnClickAddToCart}>
-                    Add to Cart
+                    {labels.addToCart}
                   </Button>
                 </div>
               </Form>
             </div>
             <div>
-              {/* <h4>Session Detail</h4> */}
-              <h4>Scheduled Date</h4>
+              {/* <h4>{labels.scheduledDate}</h4>
               <p>{`${selectedCourse?.startTime} - ${selectedCourse?.endTime}`}</p>
               {(selectedCourse?.scheduledDates ?? []).map((date, index) => (
                 <p key={"schedule_date" + index} style={{ margin: 0 }}>
                   {date}
                 </p>
-              ))}
-              <h4>Location</h4>
+              ))} */}
+              <h4>{labels.location}</h4>
               <p>{selectedCourse?.location?.name}</p>
               <p>{selectedCourse?.location?.address}</p>
             </div>

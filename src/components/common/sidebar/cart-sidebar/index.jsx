@@ -8,13 +8,15 @@ import CartCheckOut from "@components/cart/cartCheckout";
 import PrimaryButton from "@components/common/primary-button";
 
 const CartSidebar = () => {
+  const { languageLabel } = useSelector((state) => state.language);
   const { cartProducts } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const { total } = useCartInfo();
+  const labels = languageLabel?.component?.cartSideBar ?? {};
   return (
     <React.Fragment>
       <div className="bd-header-cart-wrapper">
-        {cartProducts.length === 0 && <h5>Your cart is empty</h5>}
+        {cartProducts.length === 0 && <h5>{labels.cartEmpty}</h5>}
 
         {cartProducts.length >= 1 && (
           <>
@@ -67,7 +69,7 @@ const CartSidebar = () => {
               </ul>
             </div>
             <div className="bd-header-cart-total">
-              <p>Total:</p>
+              <p>{labels.total}:</p>
               <span>${parseFloat(total)}</span>
             </div>
             <div className="bd-header-cart-footer">
@@ -80,15 +82,15 @@ const CartSidebar = () => {
               <CartCheckOut cartProducts={cartProducts}>
                 <span className="bd-btn">
                   <span className="bd-btn-inner">
-                    <span className="bd-btn-normal">Checkout</span>
-                    <span className="bd-btn-hover">Checkout</span>
+                    <span className="bd-btn-normal">{labels.checkout}</span>
+                    <span className="bd-btn-hover">{labels.checkout}</span>
                   </span>
                 </span>
               </CartCheckOut>
               <Link href="/cart" className="bd-btn bd-cart-btn-2">
                 <span className="bd-btn-inner">
-                  <span className="bd-btn-normal">View Cart</span>
-                  <span className="bd-btn-hover">View Cart</span>
+                  <span className="bd-btn-normal">{labels.viewCart}</span>
+                  <span className="bd-btn-hover">{labels.viewCart}</span>
                 </span>
               </Link>
             </div>

@@ -28,10 +28,10 @@ const PaymentMain = (props) => {
     <div className="cart-area pt-100 pb-100">
       <div className="container">
         <div>
-          <h1>Payment Successful!</h1>
+          <h3>Payment Successful!</h3>
           <p>Thank you for your purchase.</p>
 
-          <h2>Transaction Details</h2>
+          <h4>Transaction Details</h4>
           <p>Date: {paymentResponse.transactionDate}</p>
           <p>Transaction ID: {paymentResponse.transactionId}</p>
         </div>
@@ -40,9 +40,18 @@ const PaymentMain = (props) => {
             <PaymentenrollsTable enrolls={paymentResponse.enrolls} />
           </div>
         </div>
-        <PrimaryButton onClick={() => router.replace("/")}>
-          Return To Home
-        </PrimaryButton>
+        <div
+          style={{
+            marginTop: 20,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <PrimaryButton onClick={() => router.replace("/")}>
+            Return To Home
+          </PrimaryButton>
+        </div>
       </div>
     </div>
   );

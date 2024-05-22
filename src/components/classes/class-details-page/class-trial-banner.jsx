@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const ClassTrialBanner = (props) => {
   const { languageLabel } = useSelector((state) => state.language);
-  const labels = languageLabel?.home?.banner ?? {};
+  const labels = languageLabel?.component?.classTrialBanner ?? {};
   return (
     <section className="bd-joining-area pt-100 pb-100">
       <div

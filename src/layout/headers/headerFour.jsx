@@ -78,7 +78,10 @@ const HeaderFour = () => {
                     <div className="bd-header-meta-item bd-header-menu-meta d-flex align-items-center">
                       <div className="bd-header-meta-icon-3 bd-header-cart">
                         <a href="#">
-                          <i className="fa-regular fa-cart-shopping"></i>
+                          <i
+                            className="fa-regular fa-cart-shopping"
+                            style={{ fontSize: 32 }}
+                          ></i>
                           <span className="bd-header-cart-count">
                             {quantity}
                           </span>

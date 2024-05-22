@@ -153,7 +153,6 @@ const ClassDetailsArea = ({ item }) => {
                       <ClassRegistrationModal
                         clazz={clazz}
                         clazzLocalization={clazzLocalization}
-                        labels={labels}
                         enrollType={ENROLL_TYPE_STANDARD}
                       >
                         <button type="submit" className="bd-btn">
@@ -178,13 +177,16 @@ const ClassDetailsArea = ({ item }) => {
                           <ClassRegistrationModal
                             clazz={clazz}
                             clazzLocalization={clazzLocalization}
-                            labels={labels}
                             enrollType={ENROLL_TYPE_STANDARD}
                           >
                             <button type="submit" className="bd-btn">
                               <span className="bd-btn-inner">
-                                <span className="bd-btn-normal">Enroll</span>
-                                <span className="bd-btn-hover">Enroll</span>
+                                <span className="bd-btn-normal">
+                                  {labels.enroll}
+                                </span>
+                                <span className="bd-btn-hover">
+                                  {labels.enroll}
+                                </span>
                               </span>
                             </button>
                           </ClassRegistrationModal>
@@ -214,7 +216,6 @@ const ClassDetailsArea = ({ item }) => {
           <ClassRegistrationModal
             clazz={clazz}
             clazzLocalization={clazzLocalization}
-            labels={labels}
             enrollType={ENROLL_TYPE_TRIAL}
           >
             <ClassTrialBanner>

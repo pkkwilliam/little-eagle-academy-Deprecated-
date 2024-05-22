@@ -6,6 +6,23 @@
   "phoneNumberUrl": "tel:+12362348383",
   "schoolName": "雏鹰学院",
   "component": {
+    "cartMain": {
+      "cartEmpty": "您的购物车是空的",
+      "cartTotal": "购物车总计",
+      "proceedToCheckout": "继续结账",
+      "subTotal": "小计",
+      "tableColumnImage": "图片",
+      "tableColumnProduct": "产品",
+      "tableColumnPrice": "价格",
+      "tableColumnRemove": "移除",
+      "total": "总计"
+    },
+    "cartSideBar": {
+      "cartEmpty": "您的购物车是空的",
+      "checkout": "结账",
+      "total": "总计",
+      "viewCart": "查看购物车"
+    },
     "classCat": {
       "age": "年龄",
       "classDuration": "课程时长",
@@ -16,12 +33,31 @@
     "classDetailsArea": {
       "classTeach": "老师",
       "category": "类别",
+      "contactUs": "联系我们",
+      "enroll": "注册",
       "pricePerUnit": "每",
       "trial": "免费试听"
     },
     "classPageMain": {
       "trialAvailable": "免费试听",
       "viewDetail": "查看详细"
+    },
+    "classRegistrationModal": {
+      "addToCart": "加入购物车",
+      "formFirstName": "学生的名字",
+      "formLastName": "学生的姓氏",
+      "formDateOfBirth": "学生的出生日期 (MM/DD/YYYY)",
+      "location": "地点",
+      "register": "注册",
+      "scheduledDate": "预定日期",
+      "session": "课程",
+      "trial": "试听",
+      "trialDisclaimer": "所有试听课都是免费的。预订押金 $5 将在课程结束时退还。"
+    },
+    "classTrialBanner": {
+      "title": "加入我们的试听课",
+      "description": "加入我们的免费试听课吧！<br/>探索我们独特的课程如何激发和培养您孩子的创造力和学习能力。",
+      "applyNowButton": "立即申请"
     },
     "contactForm": {
       "enterYourNamePlaceHolder": "输入您的姓名",
@@ -104,12 +140,15 @@
     },
     "priceUnit": {
       "CLASS": "课程",
-      "SESSION": "session"
+      "SESSION": "学期"
     },
     "trialType": {
       "FREE": "免费",
       "NA": "无"
     }
+  },
+  "error": {
+    "403.001": "课程超出人数限制，请稍后再查看。"
   },
   "home": {
     "hero": {

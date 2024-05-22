@@ -6,6 +6,23 @@
   "phoneNumberUrl": "tel:+12362348383",
   "schoolName": "雛鷹學院",
   "component": {
+    "cartMain": {
+      "cartEmpty": "您的購物車是空的",
+      "cartTotal": "購物車總計",
+      "proceedToCheckout": "繼續結帳",
+      "subTotal": "小計",
+      "tableColumnImage": "圖片",
+      "tableColumnProduct": "產品",
+      "tableColumnPrice": "價格",
+      "tableColumnRemove": "移除",
+      "total": "總計"
+    },
+    "cartSideBar": {
+      "cartEmpty": "您的購物車是空的",
+      "checkout": "結帳",
+      "total": "總計",
+      "viewCart": "查看購物車"
+    },
     "classCat": {
       "age": "年齡",
       "classDuration": "課程時長",
@@ -16,12 +33,31 @@
     "classDetailsArea": {
       "classTeach": "老師",
       "category": "類別",
+      "contactUs": "聯繫我們",
+      "enroll": "註冊",
       "pricePerUnit": "每",
       "trial": "免費試聽"
     },
     "classPageMain": {
       "trialAvailable": "免費試聽",
       "viewDetail": "查看詳細"
+    },
+    "classRegistrationModal": {
+      "addToCart": "加入購物車",
+      "formFirstName": "學生的名字",
+      "formLastName": "學生的姓氏",
+      "formDateOfBirth": "學生的出生日期 (MM/DD/YYYY)",
+      "location": "地點",
+      "register": "註冊",
+      "scheduledDate": "預定日期",
+      "session": "課程",
+      "trial": "試聽",
+      "trialDisclaimer": "所有試聽課都是免費的。預訂押金 $5 將在課程結束時退還。"
+    },
+    "classTrialBanner": {
+      "title": "加入我們的試聽課",
+      "description": "加入我們的免費試聽課吧！<br/>探索我們獨特的課程如何激發和培養您孩子的創造力和學習能力。",
+      "applyNowButton": "立即申請"
     },
     "contactForm": {
       "enterYourNamePlaceHolder": "輸入您的姓名",

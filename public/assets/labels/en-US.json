@@ -6,6 +6,23 @@
   "phoneNumberUrl": "tel:+12362348383",
   "schoolName": "Little Eagle Academy",
   "component": {
+    "cartMain": {
+      "cartEmpty": "Your cart is empty",
+      "cartTotal": "Cart Totals",
+      "proceedToCheckout": "Proceed to Checkout",
+      "subTotal": "Subtotal",
+      "tableColumnImage": "Images",
+      "tableColumnProduct": "Product",
+      "tableColumnPrice": "Price",
+      "tableColumnRemove": "Remove",
+      "total": "Total"
+    },
+    "cartSideBar": {
+      "cartEmpty": "Your cart is empty",
+      "checkout": "Checkout",
+      "total": "Total",
+      "viewCart": "View Cart"
+    },
     "classCat": {
       "age": "Age",
       "classDuration": "Class Duration",
@@ -16,12 +33,31 @@
     "classDetailsArea": {
       "classTeach": "Instructor",
       "category": "Category",
+      "contactUs": "Contact Us",
+      "enroll": "Enroll",
       "pricePerUnit": "Per",
       "trial": "Free Trial"
     },
     "classPageMain": {
       "trialAvailable": "Free Trial",
       "viewDetail": "View Detail"
+    },
+    "classRegistrationModal": {
+      "addToCart": "Add to Cart",
+      "formFirstName": "Student's First Name",
+      "formLastName": "Student's Last Name",
+      "formDateOfBirth": "Student's Date of Birth (MM/DD/YYYY)",
+      "location": "Location",
+      "register": "Register",
+      "scheduledDate": "Scheduled Date",
+      "session": "Session",
+      "trial": "Trial",
+      "trialDisclaimer": "All trial classes are free. A reservation deposit of $5 will be return at the end of class."
+    },
+    "classTrialBanner": {
+      "title": "Join Our Trial Session",
+      "description": "Join us for a free trial session of our exciting classes!<br/>Discover how our unique programs can inspire and nurture your child's creativity and learning.",
+      "applyNowButton": "Apply Now"
     },
     "contactForm": {
       "enterYourNamePlaceHolder": "Enter your name",
