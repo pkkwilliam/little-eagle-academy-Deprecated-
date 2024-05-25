@@ -146,6 +146,21 @@ const ClassRegistrationModal = ({
                       </option>
                     ))}
                   </Form.Select>
+                  <Form.Text>
+                    <div>
+                      {/* <h4>{labels.scheduledDate}</h4>
+              <p>{`${selectedCourse?.startTime} - ${selectedCourse?.endTime}`}</p>
+              {(selectedCourse?.scheduledDates ?? []).map((date, index) => (
+                <p key={"schedule_date" + index} style={{ margin: 0 }}>
+                  {date}
+                </p>
+              ))} */}
+                      <h6 style={{ margin: 0 }}>{labels.location}</h6>
+                      {selectedCourse?.location?.name}
+                      <br />
+                      {selectedCourse?.location?.address}
+                    </div>
+                  </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
                   <Form.Label>{labels.formFirstName}</Form.Label>
@@ -193,18 +208,6 @@ const ClassRegistrationModal = ({
                   </Button>
                 </div>
               </Form>
-            </div>
-            <div>
-              {/* <h4>{labels.scheduledDate}</h4>
-              <p>{`${selectedCourse?.startTime} - ${selectedCourse?.endTime}`}</p>
-              {(selectedCourse?.scheduledDates ?? []).map((date, index) => (
-                <p key={"schedule_date" + index} style={{ margin: 0 }}>
-                  {date}
-                </p>
-              ))} */}
-              <h4>{labels.location}</h4>
-              <p>{selectedCourse?.location?.name}</p>
-              <p>{selectedCourse?.location?.address}</p>
             </div>
           </div>
         </Modal.Body>

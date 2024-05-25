@@ -79,20 +79,30 @@ const CartSidebar = () => {
                   <span className="bd-btn-hover">Checkout</span>
                 </span>
               </Link> */}
-              <CartCheckOut cartProducts={cartProducts}>
+              {/* <CartCheckOut cartProducts={cartProducts}>
                 <span className="bd-btn">
                   <span className="bd-btn-inner">
                     <span className="bd-btn-normal">{labels.checkout}</span>
                     <span className="bd-btn-hover">{labels.checkout}</span>
                   </span>
                 </span>
-              </CartCheckOut>
-              <Link href="/cart" className="bd-btn bd-cart-btn-2">
-                <span className="bd-btn-inner">
-                  <span className="bd-btn-normal">{labels.viewCart}</span>
-                  <span className="bd-btn-hover">{labels.viewCart}</span>
-                </span>
-              </Link>
+              </CartCheckOut> */}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <Link href="/cart">
+                  {/* <span className="bd-btn-inner">
+                    <span className="bd-btn-normal">{labels.viewCart}</span>
+                    <span className="bd-btn-hover">{labels.viewCart}</span>
+                  </span> */}
+                  <PrimaryButton>{labels.viewCart}</PrimaryButton>
+                </Link>
+              </div>
             </div>
           </>
         )}

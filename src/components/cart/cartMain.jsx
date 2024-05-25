@@ -2,7 +2,7 @@ import useCartInfo from "@hooks/use-cart-info";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { REQUEST_PAYMENT } from "src/middleware/api";
 import execute from "src/middleware/serviceExecutor";
@@ -16,46 +16,26 @@ import {
 import { toast } from "react-toastify";
 import { getErrorMessage } from "@utils/error-code-util";
 import PrimaryButton from "@components/common/primary-button";
-import CartCheckOut from "./cartCheckout";
+import CartCheckOut, { handleOnClickCheckout } from "./cartCheckout";
+import { isValidEmail } from "@utils/email-util";
 
 const CartMain = () => {
   const { languageLabel } = useSelector((state) => state.language);
   const { cartProducts } = useSelector((state) => state.cart);
+  const router = useRouter();
   const [email, setEmail] = useState();
+  const [validEmail, setValidEmail] = useState(false);
+
   const dispatch = useDispatch();
   const { total } = useCartInfo();
 
-  const router = useRouter();
-
   const labels = languageLabel?.component?.cartMain ?? {};
 
-  const handleChange = (e) => {};
-
-  // const handleOnClickCheckout = async () => {
-  //   const enrolls = cartProducts.map((product) => {
-  //     const { courseId, dateOfBirth, lastName, firstName } = product.formData;
-  //     return {
-  //       courseId,
-  //       student: {
-  //         firstName,
-  //         lastName,
-  //         dateOfBirth,
-  //       },
-  //     };
-  //   });
-  //   const paymentRequest = {
-  //     enrollsPaymentRequestDtos: enrolls,
-  //   };
-  //   try {
-  //     const { requestUrl, transactionId } = await execute(
-  //       REQUEST_PAYMENT(paymentRequest)
-  //     );
-  //     router.push(requestUrl);
-  //   } catch (ex) {
-  //     const message = getErrorMessage(ex);
-  //     toast.error(message);
-  //   }
-  // };
+  const onEmailChange = (email) => {
+    const isValid = isValidEmail(email);
+    setEmail(email);
+    setValidEmail(isValid);
+  };
 
   return (
     <>
@@ -230,14 +210,38 @@ const CartMain = () => {
               </div>
               <div
                 style={{
+                  alignItems: "end",
                   display: "flex",
+
                   flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
+                  flexDirection: "column",
+                  justifyContent: "end",
                 }}
               >
-                <CartCheckOut cartProducts={cartProducts}>
-                  <PrimaryButton>{labels.proceedToCheckout}</PrimaryButton>
+                <Form.Group md="4" controlId="validationCustom01">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    required
+                    type="email"
+                    placeholder="Email"
+                    onChange={(e) => onEmailChange(e.target.value)}
+                    isInvalid={!validEmail}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid email address.
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <CartCheckOut
+                  cartProducts={cartProducts}
+                  disabled={!validEmail}
+                  paymentInfo={{ email }}
+                >
+                  <PrimaryButton
+                    disabled={!validEmail}
+                    style={{ marginTop: 20 }}
+                  >
+                    {labels.proceedToCheckout}
+                  </PrimaryButton>
                 </CartCheckOut>
               </div>
             </div>
