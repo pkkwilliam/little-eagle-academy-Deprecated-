@@ -55,13 +55,7 @@ export default function ClassDetails({}) {
 }
 
 export async function getStaticPaths() {
-  //https://api.littleeagleacademy.com/public/reactive/clazz/v1
-  // const clazzes = await execute(GET_CLASSES());
-  const res = await fetch(
-    "https://api.littleeagleacademy.com/public/reactive/clazz/v1"
-  );
-  const clazzes = await res.json();
-  console.log(clazzes);
+  const clazzes = await execute(GET_CLASSES);
   const paths = clazzes.map((clazz) => ({
     params: { id: clazz.codeName, clazz },
   }));
@@ -74,11 +68,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+  const clazzes = await execute(GET_CLASSES);
   const { id } = context.params;
-  const res = await fetch(
-    "https://api.littleeagleacademy.com/public/reactive/clazz/v1"
-  );
-  const clazzes = await res.json();
   const initialClassDetails = clazzes.find((clazz) => clazz.codeName === id);
   return {
     props: { initialClassDetails },

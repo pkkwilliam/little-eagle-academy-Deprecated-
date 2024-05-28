@@ -14,6 +14,7 @@ import ClassRegistrationModal from "./class-registration-modal";
 import { ENROLL_TYPE_STANDARD, ENROLL_TYPE_TRIAL } from "src/enum/enrollType";
 import ClassTrialBanner from "./class-trial-banner";
 import PrimaryButton from "@components/common/primary-button";
+import { getServerLocalizedLabel } from "@utils/localized-util";
 
 const ClassDetailsArea = ({ item }) => {
   const { languageLabel, selectedLanguage } = useSelector(
@@ -24,7 +25,7 @@ const ClassDetailsArea = ({ item }) => {
   const labels = languageLabel?.component?.classDetailsArea ?? {};
   const clazz = item;
   const courses = clazz?.courses ?? [];
-  const clazzLocalization = item?.localized?.[selectedLanguage] ?? {};
+  const clazzLocalization = getServerLocalizedLabel(item, selectedLanguage);
   const instructor = item?.instructor ?? {};
   const localizedInstructor = instructor?.localized?.[selectedLanguage] ?? {};
   return (
@@ -88,7 +89,6 @@ const ClassDetailsArea = ({ item }) => {
                           (acc, cur) => acc + cur + ", ",
                           ""
                         );
-                        console.log(dateConcatedString);
                         const dateString =
                           dateConcatedString && dateConcatedString.length > 2
                             ? dateConcatedString.substring(

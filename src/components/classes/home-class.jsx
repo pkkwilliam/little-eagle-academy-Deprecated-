@@ -144,7 +144,6 @@ const ClazzIcon = ({ clazz }) => {
   if (clazz.iconName) {
     return <i className={clazz.iconName}></i>;
   } else {
-    console.log(clazz.imageUrls);
     return (
       <Image
         src={clazz.imageUrls[0]}

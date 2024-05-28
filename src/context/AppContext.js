@@ -29,7 +29,6 @@ const AppProvider = ({ children }) => {
   dispatch(selectLanguage(selectedLanguage));
 
   const initBasicInfo = async () => {
-    console.log("initBasicInfo");
     clearClassesCache(store);
     clearInstructorCache(store);
     getClasses(store);

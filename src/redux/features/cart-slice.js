@@ -10,7 +10,6 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     cart_product: (state, { payload }) => {
-      console.log(payload);
       const productIndex = state.cartProducts.findIndex(
         (item) => item.id == payload.id
       );
@@ -55,7 +54,6 @@ export const cartSlice = createSlice({
       }
     },
     clear_cart_force: (state, { payload }) => {
-      console.log("hererdfdfdere");
       state.cartProducts = [];
     },
   },
