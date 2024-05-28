@@ -14,7 +14,7 @@ import { getClasses } from "src/middleware/apiDataService";
 import execute from "src/middleware/serviceExecutor";
 import { store } from "src/redux/store";
 
-export default function ClassDetails() {
+export default function ClassDetails({}) {
   const [selectedId, setSelecteId] = useState(undefined);
   const [classes, setClasses] = useState([]);
   const router = useRouter();
@@ -54,32 +54,33 @@ export default function ClassDetails() {
   );
 }
 
-export async function getServerSideProps() {
-  // Fetch class details from your server
-  const clazzes = await execute(GET_CLASSES);
+export async function getStaticPaths() {
+  //https://api.littleeagleacademy.com/public/reactive/clazz/v1
+  // const clazzes = await execute(GET_CLASSES());
+  const res = await fetch(
+    "https://api.littleeagleacademy.com/public/reactive/clazz/v1"
+  );
+  const clazzes = await res.json();
+  console.log(clazzes);
+  const paths = clazzes.map((clazz) => ({
+    params: { id: clazz.codeName, clazz },
+  }));
+
+  // Return an empty array for dynamic paths, Next.js will generate them at build time
   return {
-    props: {
-      clazzes,
-    },
+    paths,
+    fallback: "blocking", // Show loading state until data is fetched
   };
 }
 
-// Define paths for dynamic routes
-// export async function getStaticPaths({ params }) {
-//   const clazzes = await execute(GET_CLASSES());
-//   const paths = clazzes.map((clazz) => ({ params: { clazz } }));
-
-//   // Return an empty array for dynamic paths, Next.js will generate them at build time
-//   return {
-//     paths,
-//     fallback: false, // Show loading state until data is fetched
-//   };
-// }
-
-// export async function getStaticProps({ params }) {
-//   const { clazz } = params;
-//   // Fetch item data based on the ID from an API
-//   return {
-//     props: { clazz },
-//   };
-// }
+export async function getStaticProps(context) {
+  const { id } = context.params;
+  const res = await fetch(
+    "https://api.littleeagleacademy.com/public/reactive/clazz/v1"
+  );
+  const clazzes = await res.json();
+  const initialClassDetails = clazzes.find((clazz) => clazz.codeName === id);
+  return {
+    props: { initialClassDetails },
+  };
+}
