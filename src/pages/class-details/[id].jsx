@@ -54,6 +54,16 @@ export default function ClassDetails() {
   );
 }
 
+export async function getServerSideProps() {
+  // Fetch class details from your server
+  const clazzes = await execute(GET_CLASSES);
+  return {
+    props: {
+      clazzes,
+    },
+  };
+}
+
 // Define paths for dynamic routes
 // export async function getStaticPaths({ params }) {
 //   const clazzes = await execute(GET_CLASSES());

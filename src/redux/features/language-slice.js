@@ -10,7 +10,7 @@ import {
 import { toast } from "react-toastify";
 
 const initialState = {
-  selectedLanguage: LANGUAGE_ENGLISH_US.code,
+  selectedLanguage: undefined,
   languageLabel: getLabel(LANGUAGE_ENGLISH_US.code),
 };
 

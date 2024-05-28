@@ -12,6 +12,7 @@ import SEO from "@components/seo";
 import { useState } from "react";
 import Preloader from "@components/common/preloader";
 import { useEffect } from "react";
+import LanguageSelectModal from "@components/common/modals/language-select-modal";
 
 let persistor = persistStore(store);
 const isDev = process.env.NODE_ENV === "development";
@@ -40,6 +41,7 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <PersistGate loading={<Preloader />} persistor={persistor}>
           <AppProvider>
+            <LanguageSelectModal />
             {isLoading ? <Preloader /> : <Component {...pageProps} />}
             <ToastContainer />
           </AppProvider>

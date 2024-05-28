@@ -11,12 +11,15 @@ import LanguageDropdownSelector from "@components/language/language-dropdown-sel
 import { useSelector } from "react-redux";
 import CartSidebar from "@components/common/sidebar/cart-sidebar";
 import useCartInfo from "@hooks/use-cart-info";
+import { getLogo } from "@utils/localized-util";
 
 const HeaderFour = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { sticky } = useSticky();
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false);
-  const { languageLabel } = useSelector((state) => state.language);
+  const { languageLabel, selectedLanguage } = useSelector(
+    (state) => state.language
+  );
   const labels = languageLabel ?? {};
   const { quantity } = useCartInfo();
   return (
@@ -34,7 +37,7 @@ const HeaderFour = () => {
                   <div className="bd-header-logo">
                     <Link href="/">
                       <Image
-                        src={logo}
+                        src={getLogo(selectedLanguage)}
                         style={{ width: "138%", height: "138%", margin: 6 }}
                         alt="img not found"
                       />

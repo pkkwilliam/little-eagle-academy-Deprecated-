@@ -11,9 +11,12 @@ import { useSelector } from "react-redux";
 import LanguageDropdownSelector from "@components/language/language-dropdown-selector";
 import CartSidebar from "@components/common/sidebar/cart-sidebar";
 import useCartInfo from "@hooks/use-cart-info";
+import { getLogo } from "@utils/localized-util";
 
 const Header = () => {
-  const { languageLabel } = useSelector((state) => state.language);
+  const { languageLabel, selectedLanguage } = useSelector(
+    (state) => state.language
+  );
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { sticky } = useSticky();
   const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false);
@@ -33,7 +36,7 @@ const Header = () => {
                   <div className="bd-header-logo">
                     <Link href="/">
                       <Image
-                        src={logo}
+                        src={getLogo(selectedLanguage)}
                         style={{
                           width: "138%",
                           height: "138%",

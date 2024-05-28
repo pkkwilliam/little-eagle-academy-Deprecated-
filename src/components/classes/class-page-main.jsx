@@ -9,6 +9,7 @@ import img_1 from "@assets/img/class/6.jpg";
 import author_1 from "@assets/img/teacher/small-1.png";
 import { TRIAL_TYPE_FREE } from "src/enum/TrialType";
 import SmallPrimaryButton from "@components/common/SmallPrimaryButton";
+import { getServerLocalizedLabel } from "@utils/localized-util";
 
 const ClassPageMain = () => {
   const { languageLabel, selectedLanguage } = useSelector(
@@ -32,7 +33,8 @@ const ClassPageMain = () => {
       <div className="container">
         <div className="row">
           {classes.map((item) => {
-            const clazz = item?.localized?.[selectedLanguage] ?? {};
+            // const clazz = item?.localized?.[selectedLanguage] ?? {};
+            const clazz = getServerLocalizedLabel(item, selectedLanguage);
             const instructor = item.instructor;
             const localizedInstructor =
               instructor?.localized?.[selectedLanguage];
