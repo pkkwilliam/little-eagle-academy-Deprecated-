@@ -95,6 +95,12 @@ const ClassRegistrationModal = ({
     setShow(false);
   };
 
+  const isValidForm =
+    formData.courseId &&
+    formData.firstName &&
+    formData.lastName &&
+    formData.dateOfBirth;
+
   return (
     <span>
       <span onClick={() => setShow(true)}>{children}</span>
@@ -203,7 +209,11 @@ const ClassRegistrationModal = ({
                 </Form.Group>
                 {isTrial && <h6>{labels.trialDisclaimer}</h6>}
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <Button variant="primary" onClick={handleOnClickAddToCart}>
+                  <Button
+                    disabled={!isValidForm}
+                    variant="primary"
+                    onClick={handleOnClickAddToCart}
+                  >
                     {labels.addToCart}
                   </Button>
                 </div>
@@ -215,7 +225,5 @@ const ClassRegistrationModal = ({
     </span>
   );
 };
-
-function constructCourseCartItem() {}
 
 export default ClassRegistrationModal;
