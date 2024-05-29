@@ -18,6 +18,7 @@ import { getErrorMessage } from "@utils/error-code-util";
 import PrimaryButton from "@components/common/primary-button";
 import CartCheckOut, { handleOnClickCheckout } from "./cartCheckout";
 import { isValidEmail } from "@utils/email-util";
+import { ENROLL_TYPE_TRIAL } from "src/enum/enrollType";
 
 const CartMain = () => {
   const { languageLabel } = useSelector((state) => state.language);
@@ -75,41 +76,43 @@ const CartMain = () => {
                       {cartProducts.map((item, index) => (
                         <tr key={index}>
                           <td className="product-thumbnail">
-                            <Link href={`/shop-details/${item.id}`}>
-                              <Image
-                                src={item?.productImg}
-                                style={{
-                                  borderRadius: 8,
-                                  width: "100%",
-                                  height: "100%",
-                                }}
-                                alt="img not found"
-                              />
-                            </Link>
+                            <Image
+                              src={item?.productImg}
+                              style={{
+                                borderRadius: 8,
+                                width: "100%",
+                                height: "100%",
+                              }}
+                              alt="img not found"
+                            />
                           </td>
                           <td className="product-name">
-                            <Link href={`/shop-details/${item.id}`}>
-                              <div
-                                style={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                }}
-                              >
-                                {item.title}
-                                <div>
-                                  {item.subTitles.map((subTitle, index) => (
-                                    <h6
-                                      key={"st" + index}
-                                      style={{ color: "grey", margin: 0 }}
-                                    >
-                                      {subTitle}
-                                    </h6>
-                                  ))}
-                                </div>
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }}
+                            >
+                              {item.title}
+                              <div>
+                                {item.subTitles.map((subTitle, index) => (
+                                  <h6
+                                    key={"st" + index}
+                                    style={{ color: "grey", margin: 0 }}
+                                  >
+                                    {subTitle}
+                                  </h6>
+                                ))}
+                                {item?.formData?.enrollType ===
+                                  ENROLL_TYPE_TRIAL.key && (
+                                  <h6 style={{ color: "red" }}>
+                                    {labels.trialDisclaimer}
+                                  </h6>
+                                )}
                               </div>
-                            </Link>
+                            </div>
                           </td>
                           {/* <td className="product-price">
                             <span className="amount">${item.price}</span>
