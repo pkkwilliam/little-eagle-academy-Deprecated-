@@ -150,7 +150,9 @@
     }
   },
   "error": {
-    "403.001": "Course/s exceed optimum capacity. Please check back later."
+    "400.001": "Email not present",
+    "403.001": "Course/s exceed optimum capacity. Please check back later.",
+    "403.002": "Student has already participated in a trial class previously. Please contact us if this is an error."
   },
   "home": {
     "hero": {

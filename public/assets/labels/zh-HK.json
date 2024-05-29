@@ -15,7 +15,7 @@
       "tableColumnProduct": "產品",
       "tableColumnPrice": "價格",
       "tableColumnRemove": "移除",
-      "trialDisclaimer": "所有試聽課都是免費，預訂押金 $5 將在課程結束時退還。",
+      "trialDisclaimer": "所有試聽課均為免費，預訂押金 $5 將在課程結束時退還。",
       "total": "總計"
     },
     "cartSideBar": {
@@ -53,7 +53,7 @@
       "scheduledDate": "預定日期",
       "session": "課程",
       "trial": "試聽",
-      "trialDisclaimer": "所有試聽課都是免費，預訂押金 $5 將在課程結束時退還。"
+      "trialDisclaimer": "所有試聽課均為免費，預訂押金 $5 將在課程結束時退還。"
     },
     "classTrialBanner": {
       "title": "加入我們的試聽課",
@@ -149,7 +149,9 @@
     }
   },
   "error": {
-    "403.001": "課程超出人數限制，請稍後再查看。"
+    "400.001": "電子郵箱未填寫",
+    "403.001": "課程超出人數限制，請稍後再查看。",
+    "403.002": "學生已參加過試聽課程。如信息有誤，請聯繫我們。"
   },
   "home": {
     "hero": {

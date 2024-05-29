@@ -15,6 +15,7 @@ import { ENROLL_TYPE_STANDARD, ENROLL_TYPE_TRIAL } from "src/enum/enrollType";
 import ClassTrialBanner from "./class-trial-banner";
 import PrimaryButton from "@components/common/primary-button";
 import { getServerLocalizedLabel } from "@utils/localized-util";
+import { toDisplayMonthDate } from "@utils/time-util";
 
 const ClassDetailsArea = ({ item }) => {
   const { languageLabel, selectedLanguage } = useSelector(
@@ -86,7 +87,7 @@ const ClassDetailsArea = ({ item }) => {
                     <div>
                       {courses.map((course, index) => {
                         const dateConcatedString = course.scheduledDates.reduce(
-                          (acc, cur) => acc + cur + ", ",
+                          (acc, cur) => acc + toDisplayMonthDate(cur) + ", ",
                           ""
                         );
                         const dateString =
@@ -97,9 +98,21 @@ const ClassDetailsArea = ({ item }) => {
                               )
                             : "";
                         return (
-                          <div key={"course" + index}>
-                            <h6>{course.name}</h6>
-                            <span>{dateString}</span>
+                          <div
+                            key={"course" + index}
+                            style={index === 0 ? {} : { marginTop: 10 }}
+                          >
+                            <div
+                              style={{ display: "flex", flexDirection: "row" }}
+                            >
+                              <h4>{`${course.name} - ${course.scheduledDates.length} classes`}</h4>
+                              &nbsp;
+                            </div>
+                            <LabelText label="Dates" text={dateString} />
+                            <LabelText
+                              label="Time"
+                              text={`${course.startTime} - ${course.endTime}`}
+                            />
                           </div>
                         );
                       })}
@@ -230,6 +243,22 @@ const ClassDetailsArea = ({ item }) => {
       <ClassDetailsWidget clazz={clazz} clazzLocalization={clazzLocalization} />
       {/* <ClassDetailsWidgetTwo /> */}
     </>
+  );
+};
+
+const LabelText = ({ label, text }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "start",
+      }}
+    >
+      <p style={{ fontWeight: 600, margin: 0 }}>{label}:</p>
+      &nbsp;
+      <p style={{ margin: 0 }}>{text}</p>
+    </div>
   );
 };
 
