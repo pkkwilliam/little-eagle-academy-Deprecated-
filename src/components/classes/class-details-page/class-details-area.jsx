@@ -185,7 +185,14 @@ const ClassDetailsArea = ({ item }) => {
                         </span>
                         <h4>${item?.price}</h4>
                       </div>
-                      <div>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                        }}
+                      >
                         {clazz.courses?.length > 0 ? (
                           <ClassRegistrationModal
                             clazz={clazz}
@@ -214,6 +221,15 @@ const ClassDetailsArea = ({ item }) => {
                               </span>
                             </button>
                           </Link>
+                        )}
+                        {clazz.trialAvailable && (
+                          <ClassRegistrationModal
+                            clazz={clazz}
+                            clazzLocalization={clazzLocalization}
+                            enrollType={ENROLL_TYPE_TRIAL}
+                          >
+                            <Button variant="link">{labels.trial}</Button>
+                          </ClassRegistrationModal>
                         )}
                       </div>
                     </div>
