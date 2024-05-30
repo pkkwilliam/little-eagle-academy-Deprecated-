@@ -1,5 +1,6 @@
 import HomeBanner from "@components/banners/home-banner";
 import ClassDetailsArea from "@components/classes/class-details-page/class-details-area";
+import ClassDisclaimerBanner from "@components/classes/class-details-page/class-disclaimer-banner";
 import MoreProgrammers from "@components/classes/class-details-page/more-programmers";
 import HomeNewsletter from "@components/newsletter/home-newsletter";
 import SEO from "@components/seo";
@@ -48,6 +49,7 @@ export default function ClassDetails({}) {
       <ClassDetailsArea item={clazzDetail} />
       {/* <HomeBanner /> */}
       {/* <MoreProgrammers/> */}
+      <ClassDisclaimerBanner />
       <HomeNewsletter />
       <Footer />
     </Wrapper>

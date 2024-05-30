@@ -39,6 +39,41 @@
       "pricePerUnit": "Per",
       "trial": "Free Trial"
     },
+    "classDisclaimerBanner": {
+      "title": "Our Policy",
+      "disclaimers": [
+        {
+          "title": "Health & Safety Agreement",
+          "contents": [
+            "Please be mindful. Only attending the class when both the grownup and the child are 100% healthy without any symptoms.",
+            "We will provide sanitizer on site for anyone to use.",
+            "A caretaker is required to stay with the child in the class and supervise the child at all times.(Mommy-and-Me class only)"
+          ]
+        },
+        {
+          "title": "Class Policy",
+          "contents": [
+            "Make-up classes will be offered at Little Eagle Academy location only. Due to very limited scheduling, we are not able to guarantee a make-up class. We will do our best to schedule a make-up class based on availability and a make-up class must also be scheduled before the end of the current session.",
+            "Any sibling older than 6 months old must sign up for a spot to attend the class. Babies under 6 months old may attend the class for free with a registered sibling.",
+            "If you are registering more than one child for the same session, please email admin@littleeagleacademy.com to request a 10% sibling discount code."
+          ]
+        },
+        {
+          "title": "Photography and Videography",
+          "contents": [
+            "Your child’s class experience will create many great photo opportunities that we would like your permission to capture and use. By registering, I consent to the use and disclosure of the image, name, and the taking of photographs, recordings, and videos of my child by Little Eagle Academy. I grant Little Eagle Academy the right to disclose, edit, use, and reuse my child's image, name, and the taking of photographs, recordings, and videos.This includes use in print, on broadcasts, in online spaces (such website and social media accounts and those of the press), and all other forms of media. I also release Little Eagle Academy, its agents, and employees from all claims, demands, and liabilities in connection with the rights granted above.",
+            "If you wish to opt out of your child’s inclusion in photographs and other media, please contact our team."
+          ]
+        },
+        {
+          "title": "Cancellation Policy",
+          "contents": [
+            "$50 cancellation fee will be charged for all withdrawals.",
+            "Our last date for refunds is 30 days before the start of the session."
+          ]
+        }
+      ]
+    },
     "classPageMain": {
       "trialAvailable": "Free Trial",
       "viewDetail": "View Detail"
